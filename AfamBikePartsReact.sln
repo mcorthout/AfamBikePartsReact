@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.489
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfamBikePartsReact", "AfamBikePartsReact\AfamBikePartsReact.csproj", "{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfamBikePartsReactTest", "AfamBikePartsReactTest\AfamBikePartsReactTest.csproj", "{76168020-EF3C-46C4-BED9-74873C859A38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C5505F9F-444D-4919-8FA0-3DBB588F8D17}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76168020-EF3C-46C4-BED9-74873C859A38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76168020-EF3C-46C4-BED9-74873C859A38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76168020-EF3C-46C4-BED9-74873C859A38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76168020-EF3C-46C4-BED9-74873C859A38}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8A5D1C0A-72B3-4514-BE46-64F14CF4E625}
+	EndGlobalSection
+EndGlobal

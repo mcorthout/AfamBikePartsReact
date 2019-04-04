@@ -1,0 +1,35 @@
+{
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "experimentalDecorators": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "noEmitOnError": true,
+    "removeComments": false,
+    "sourceMap": true,
+    "allowJs": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "lib": [ "es6", "dom" ],
+    "outDir": "./js",
+    "jsx": "react",
+    "rootDir": "./client",
+    "disableSizeLimit":  true
+  },
+  "exclude": [
+    "node_modules",
+    "wwwroot",
+    "webpack.config.js",
+    "js",
+	"src/**/__tests__"
+  ],
+  "types": [
+    "typePatches"
+  ]
+}
+

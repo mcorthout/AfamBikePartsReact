@@ -1,0 +1,45 @@
+@model AfamBikePartsReact.ViewModels.HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var reactDivDisplay = @Model.ReactAppHidden ? "none" : "inline";
+    var reactDivId = @Model.ReactAppHidden ? "" : "react-app";
+}
+
+<form id="mainform" asp-controller="Home" asp-action="Index" method="post">
+    <div>
+        <div id="productdiv" style="float:left; margin-right: 2em">
+            <p>Select one or more product categories</p>
+            @for (int i = 0; i < Model.Groups.Length; i++)
+            {
+                <input type="radio" asp-for="@Model.SelectedMainGroup" value="@Model.Groups[i].Value" />@Model.Groups[i].Name<br />
+                for (int j = 0; j < Model.Groups[i].ProductGroups.Length; j++)
+                {
+                    <input style="margin-left: 2em" type="checkbox" asp-for="@Model.Groups[i].ProductGroups[j].Selected" />@Model.Groups[i].ProductGroups[j].Name<br />
+                }
+                <br />
+            }
+        </div>
+        <div id="languagediv" style="float:left">
+            <p>Select a language</p>
+            <input id="NLRadio" type="radio" value="nl" asp-for="@Model.SelectedLanguage" />Nederlands<br />
+            <input id="ENRadio" type="radio" value="en" asp-for="@Model.SelectedLanguage" />English<br />
+            <input id="FRRadio" type="radio" value="fr" asp-for="@Model.SelectedLanguage" />Fran&ccedil;ais<br />
+            <input id="DERadio" type="radio" value="de" asp-for="@Model.SelectedLanguage" />Deutsch<br />
+        </div>
+    </div>
+    <div style="clear:both">
+        <input id="submitbtn" type="submit" value="Submit"/>
+    </div>
+</form>
+
+<div style="display: @reactDivDisplay" id=@reactDivId data-language="@Model.SelectedLanguage" data-parts="@Model.SelectedProductGroups">Loading...</div>
+
+
+@section scripts {
+    <script>
+        window.Promise || document.write('<script src="https://unpkg.com/es6-promise@3.2.1/dist/es6-promise.min.js"><\/script>');
+    </script>
+    <script src= "~/js/appvendor.js" ></script>
+    <script src="~/js/afamapp.js"></script>
+}

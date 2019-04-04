@@ -1,0 +1,1 @@
+﻿export { Translations } from "./translations";

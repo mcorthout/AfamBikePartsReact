@@ -1,0 +1,68 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="client\components\batteries\batteryinfomodal.tsx" />
+    <None Remove="client\components\common\imagemodal.tsx" />
+    <None Remove="client\components\common\reversemodal.tsx" />
+    <None Remove="client\components\kits\chaininfomodal.tsx" />
+    <None Remove="client\constants\constants.ts" />
+    <None Remove="client\models\bikereversemodel.ts" />
+    <None Remove="client\models\chaininfomodel.ts" />
+    <None Remove="client\models\chainmodel.ts" />
+    <None Remove="client\models\kitstate.ts" />
+    <None Remove="client\models\sprocketmodel.ts" />
+    <None Remove="client\react-responsive-modal.d.ts" />
+    <None Remove="client\stores\partstore.ts" />
+    <None Remove="client\stores\__tests__\appstore.spec.ts" />
+    <None Remove="client\stores\__tests__\batterystore.spec.ts" />
+    <None Remove="client\stores\__tests__\bikestore.spec.ts" />
+    <None Remove="client\stores\__tests__\filterstore.spec.ts" />
+    <None Remove="client\stores\__tests__\kitstore.spec.ts" />
+    <None Remove="client\translations\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.1.9" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="client\components\batteries\batteryinfomodal.tsx" />
+    <TypeScriptCompile Include="client\components\common\imagemodal.tsx" />
+    <TypeScriptCompile Include="client\components\common\reversemodal.tsx" />
+    <TypeScriptCompile Include="client\components\kits\chaininfomodal.tsx" />
+    <TypeScriptCompile Include="client\constants\constants.ts" />
+    <TypeScriptCompile Include="client\models\bikereversemodel.ts" />
+    <TypeScriptCompile Include="client\models\chaininfomodel.ts" />
+    <TypeScriptCompile Include="client\models\chainmodel.ts" />
+    <TypeScriptCompile Include="client\models\kitstate.ts" />
+    <TypeScriptCompile Include="client\models\sprocketmodel.ts" />
+    <TypeScriptCompile Include="client\stores\partstore.ts" />
+    <TypeScriptCompile Include="client\stores\__tests__\appstore.spec.ts" />
+    <TypeScriptCompile Include="client\stores\__tests__\batterystore.spec.ts" />
+    <TypeScriptCompile Include="client\stores\__tests__\bikestore.spec.ts" />
+    <TypeScriptCompile Include="client\stores\__tests__\filterstore.spec.ts" />
+    <TypeScriptCompile Include="client\stores\__tests__\kitstore.spec.ts" />
+    <TypeScriptCompile Include="client\translations\index.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Debug (&#xD;&#xA;  npm run dev&#xD;&#xA;) else (&#xD;&#xA;  npm run prod&#xD;&#xA;)" />
+  </Target>
+  
+</Project>

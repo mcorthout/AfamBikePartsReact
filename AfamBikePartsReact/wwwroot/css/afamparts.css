@@ -1,0 +1,568 @@
+#react-app {    
+    -webkit-margin-before: unset !important;
+    -webkit-margin-after: unset !important;
+    -webkit-margin-start: unset !important;
+    -moz-margin-start: unset !important;
+    -webkit-margin-end: unset !important;
+    -moz-margin-end: unset !important;
+    -webkit-padding-start: unset !important;
+    -moz-padding-start: unset !important;
+    display: unset !important;
+}
+
+/* Bikes */
+
+.bike-select-container {
+    margin-left: 0;
+    margin-top: 1rem;
+    display: table;
+    line-height: 2;
+}
+
+.bike-select-row {
+    display: table-row;
+}
+
+.bike-select-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.bike-select-cell-none {
+    display: none;
+}
+
+    .bike-select-cell > select,
+    .bike-select-cell-none > select,
+    .bike-select-cell > span,
+    .bike-select-cell-none > span {
+        margin-bottom: 0;
+        margin-right: 0.5rem;
+    }
+
+    .bike-select-cell > span,
+    .bike-select-cell-none > span {
+        height: 2.25rem;
+    }
+
+/* Reverse applications */
+
+.reverse-link {    
+    text-align: center;
+}
+
+.reverse-link a {
+    color: cornflowerblue;
+}
+
+.bike-reverse-table {
+    color: black;
+    border: #EFEFEF 1px solid;
+    padding-right: 1.5rem;
+}
+
+.bike-reverse-row {
+    display: table-row;    
+}
+
+.bike-reverse-cell {
+    display: table-cell;
+    border: #EFEFEF 1px solid;
+    padding: 0.25rem;
+    white-space: nowrap;
+}
+
+.bike-reverse-header {
+    display: table-cell;
+    background-color: #00148e;
+    border: #EFEFEF 1px solid;
+    padding: 0.25rem;
+    color: white;
+}
+
+/* Reverse application paginator */
+
+.paginator {
+    margin: 1rem;
+}
+
+.paginator ul {
+    display: table-row;
+    text-align: center;
+}
+
+.paginator li {
+    display: inline-block;
+}
+
+.paginator a {
+    color: cornflowerblue;
+    padding: 0 0.5rem 0 0.5rem;
+}
+
+.paginator .disabled a {
+    color: lightgray;
+}
+
+.paginator-active a {
+    background-color: cornflowerblue;
+    color: white;
+}
+
+/* Kits */
+
+.kit-table-container {
+    display: inline-block;   
+}
+
+.kit-table-row {
+    display: block;
+    background-color: #EFEFEF;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+}
+
+.kit-title {
+    color: #00148e;
+    font-weight: bold;
+    font-size: large;
+    padding-bottom: 0.5rem;
+}
+
+.kit-table-cell {
+}
+
+.kit-table-kitpart {
+    padding: 0 0 0.5rem 0;
+}
+
+.kit-table-kitname {
+    color: #00148e;
+}
+
+.kit-table-description {
+    padding: 0 0 1.0rem 0;
+}
+
+.kit-parts {
+    margin: auto;
+}
+
+.kitpart-row {
+    display: table-row;    
+}
+
+.kitpart-body {
+	display: table-row-group;
+}
+
+.kitpart-table {
+    display: table;
+    border-collapse: collapse;
+}	
+
+.kitpart-header {
+	display: table-header-group;
+}
+
+.kitpart-component-cell {
+    display: table-cell;
+    padding: 1rem;
+    text-align: center;
+    height: 100%;
+    line-height: 200%;
+    border: #3F3F3F 1px solid;
+}
+
+.kitpart-component-header {
+    display: table-cell;
+    padding: 1rem;
+    text-align: center;
+    height: 100%;
+    line-height: 150%;
+    border: #3F3F3F 1px solid;
+    color: white;
+    background-color: #00148e;
+    vertical-align: middle;
+}
+
+.kitpart-component-cell-label {
+    margin-right: 0.5rem;
+}
+
+.kitpart-component-cell-value {
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.kitpart-partname {
+    color: #00148e;
+}
+
+.kitpart-block {
+    display: block;
+}
+
+.kitpart-inline {
+    display: inline;
+}
+
+.kitpart-inline-block {
+    display: inline-block;
+}
+
+.kitpart-thumbnail {
+    margin-top: 0.5rem;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* Parts */
+
+.partlist-container {
+}
+
+
+.part_tab_content {
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #5a5a5a;
+    display: inline-table;
+}
+
+.part-table {
+    margin: auto;
+    padding: 1rem;
+    border: 1px solid #5a5a5a;
+    display: inline-table;
+    border-color: #5a5a5a;
+    border-width: 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.part-table th {
+    background-color: #00148e;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5a5a5a;
+}
+
+.part-table .firstcol {
+    background-color: #00148e;
+    color: Black;
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.part-table td {
+    padding: 0.5rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #5a5a5a;
+}
+
+.collapsed {
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+.cell-center {
+    text-align: center;
+}
+
+.cell-right {
+    text-align: right;
+}
+
+.cell-left {
+    text-align: left;
+}
+
+.info-image {
+    width: 24px;
+}
+
+/* Battery info modal */
+
+.battery-info {
+    display: inline-block;
+}
+
+.battery-info-header {
+    display: inline;
+    color: black;
+    font-weight: bold;
+}
+
+.battery-info-left {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 2rem;
+}
+
+.battery-info-right {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.battery-info-table {
+    display: table;
+    border-collapse: collapse;
+}
+
+.battery-info-row {
+    display: table-row;
+}
+
+.battery-info-drawing-row {
+    display: table-row;
+    padding-bottom: 2rem;
+}
+
+.battery-info-cell {
+    display: table-cell;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+}
+
+.battery-info-cell-label {
+    display: table-cell;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    font-style: italic;
+}
+
+.battery-layout-image {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 1rem;
+}
+
+.battery-terminal-image {
+    display: table-cell;
+    vertical-align: middle;
+    padding-bottom: 1rem;
+}
+
+/* Chain info modal */
+
+
+.chain-info {
+    display: inline-block;
+}
+
+.chain-info-header {
+    display: inline;
+    color: black;
+    font-weight: bold;
+}
+
+.chain-info-left {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 2rem;    
+}
+
+.chain-info-right {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+}
+
+.chain-info-table {
+    display: table;
+    border-collapse:collapse;
+}
+
+.chain-info-row {
+    display: table-row;
+}
+
+.chain-info-cell {
+    display: table-cell;
+    padding-right: 1.5rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+}
+
+.chain-info-cell-label {
+    display: table-cell;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    vertical-align: middle;
+    font-style: italic;
+}
+
+/* Sprocket image thumbnail*/
+
+.sprocket-thumbnail {
+    border-width: 0;
+    height: 4rem
+}
+
+/* Chain image thumbnail */
+
+.chain-thumbnail {
+    border-width: 0;
+    height: 4rem
+}
+
+/* Chain image modal */ 
+
+#ChainModalImage {
+    max-width: 600px;
+}
+
+/* Battery image thumbnail */
+
+.battery-thumbnail {
+    border-width: 0;
+    width: 4rem
+}
+
+/* Battery image modal */
+
+#BatteryModalImage {
+    max-width: 600px;
+}
+
+/* Filter image thumbnail */
+
+.filter-thumbnail {
+    border-width: 0;
+    width: 4rem
+}
+
+
+/* Modals */
+
+body.modal-showing {
+    overflow: hidden;
+}
+
+.modal_background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 1050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal_content {
+    background-color: white;
+    width: auto;
+    height: auto;    
+    max-height: 100vh;
+    overflow: auto;
+    max-width: 100vw;
+    display: inline;
+}
+
+.modal_header {
+    padding: 10px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.modal_title {
+    margin: 0;
+    color: black;
+    font-weight: bold;
+    display: inline;
+}
+
+.modal_body {
+    padding: 15px;
+    color: black;
+}
+
+.modal_image {
+    max-width: 100%;
+    height: auto;
+    width: auto;
+    min-width: 300px;
+}
+
+.modal_footer {
+    text-align: right;
+    padding: 10px;
+    border-top: 1px solid #e5e5e5;
+}
+
+.close {
+    float: right;
+    font-size: 21px;
+    font-weight: bold;
+    line-height: 1;
+    color: #FFF;
+    text-shadow: 0 1px 0 #000;
+    opacity: .6;
+}
+
+.close:hover,
+.close:focus {
+    color: #fc0;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .8;
+}
+
+button.close {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: black;
+}
+
+.close_button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: 0;
+    color: black;
+}
+
+.close_button:hover {
+    color: #fc0;
+}
+
+/**/
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
