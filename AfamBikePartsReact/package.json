@@ -12,7 +12,7 @@
   "dependencies": {
     "acorn": ">=5.7.4",
     "aspnet-prerendering": "^3.0.1",
-    "axios": ">=0.21.1",
+    "axios": ">=0.21.2",
     "kind-of": ">=6.0.3",
     "minimist": ">=0.2.1",
     "mobx": "^3.6.1",
