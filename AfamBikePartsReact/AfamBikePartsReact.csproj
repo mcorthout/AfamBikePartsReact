@@ -26,6 +26,7 @@
     <None Remove="client\stores\__tests__\filterstore.spec.ts" />
     <None Remove="client\stores\__tests__\kitstore.spec.ts" />
     <None Remove="client\translations\index.ts" />
+    <None Remove="dummy.ts" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +59,24 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\fonts\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="bundleconfig.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="package.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="tsconfig.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="tslint.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
+    <Content Update="_npm-shrinkwrap.json">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
