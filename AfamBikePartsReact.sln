@@ -1,8 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 16
+VisualStudioVersion = 16.0
+MinimumVisualStudioVersion = 16.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfamBikePartsReact", "AfamBikePartsReact\AfamBikePartsReact.csproj", "{E6F08C0C-43F7-4ECC-A9FD-04F496B8F9B6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AfamBikePartsReactTest", "AfamBikePartsReactTest\AfamBikePartsReactTest.csproj", "{76168020-EF3C-46C4-BED9-74873C859A38}"
