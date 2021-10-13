@@ -85,7 +85,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                         <a href="#">
                             <img
                                 className="info-image"
-                                src="/images/info.png"
+                                src="https://afam.com/wp-content/themes/netAfam/afamparts/info.png"
                                 onClick={(e) => { this.props.store.ShowBatteryInfo(s); e.preventDefault(); }}
                             />
                         </a>
