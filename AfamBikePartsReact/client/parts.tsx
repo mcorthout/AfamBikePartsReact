@@ -44,6 +44,7 @@ export class Parts extends React.Component<IPartsProps, {}> {
             PartBrands.Shido +
             PartBrands.Ison;
 
+        // tslint:disable-next-line:no-bitwise
         return ((this.props.parts & supported) !== 0);
     }
 

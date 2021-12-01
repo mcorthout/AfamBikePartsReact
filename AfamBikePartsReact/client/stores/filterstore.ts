@@ -1,12 +1,11 @@
-﻿import { action, computed, observable } from "mobx";
+﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
+import { BikeReverseModel, FilterModel } from "../models";
+import { PartService, ReverseService } from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
-import { FilterModel, BikeReverseModel } from "../models";
-import { PartService, ReverseService } from "../services";
 
 export class FilterStore extends PartStore {
-
     public polyglot: Polyglot;
 
     @observable
@@ -51,7 +50,7 @@ export class FilterStore extends PartStore {
         this.FilterImageTitle = filter.Part;
         this.FilterDrawingUrl = url;
         this.FilterDrawingModalVisible = true;
-    } 
+    }
 
     /* Reverse applications */
     @observable
@@ -87,6 +86,8 @@ export class FilterStore extends PartStore {
     constructor(public appStore: AppStore) {
         super();
 
+        makeObservable(this);
+
         this.filters = [];
         this.bikeId = 0;
         this.polyglot = this.appStore.polyglot;
@@ -112,7 +113,6 @@ export class FilterStore extends PartStore {
         } else {
             return false;
         }
-
     }
 
     @computed
@@ -138,5 +138,4 @@ export class FilterStore extends PartStore {
     private updateFilters(newFilters: FilterModel[]): void {
         this.filters = newFilters;
     }
-
 }

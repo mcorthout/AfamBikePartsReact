@@ -2,7 +2,7 @@
 
 interface IImageModalProps {
     show: boolean;
-    onHide: Function;
+    onHide: () => void;
     imageUrl: string;
     modalId: string;
     imageId: string;
@@ -11,10 +11,8 @@ interface IImageModalProps {
 }
 
 export class ImageModal extends React.Component<IImageModalProps, {}> {
-
     public render() {
         if (this.props.show) {
-
             document.body.classList.add("modal-showing");
 
             return (
@@ -56,5 +54,4 @@ export class ImageModal extends React.Component<IImageModalProps, {}> {
             return null;
         }
     }
-
 }

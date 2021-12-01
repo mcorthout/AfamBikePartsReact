@@ -19,14 +19,16 @@
     "outDir": "./js",
     "jsx": "react",
     "rootDir": "./client",
-    "disableSizeLimit":  true
+    "disableSizeLimit": true,
+    "useDefineForClassFields": true
   },
   "exclude": [
     "node_modules",
     "wwwroot",
     "webpack.config.js",
     "js",
-	  "src/**/__tests__"
+    "src/**/__tests__",
+    "test-preprocess.js"
   ],
   "types": [
     "typePatches"

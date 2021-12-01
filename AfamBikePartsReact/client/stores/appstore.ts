@@ -8,7 +8,6 @@ import { FilterStore } from "./filterstore";
 import { PartBrands } from "../constants";
 
 export class AppStore {
-
     public polyglot: Polyglot;
     public bikeStore: BikeStore;
     public partStore: PartStore;
@@ -16,7 +15,6 @@ export class AppStore {
     private bikeId: number;
 
     constructor(public parts: number = 1, public language: string = "en") {
-
         // Configure polyglot
         let translationTable = Translations[language];
 
@@ -33,6 +31,7 @@ export class AppStore {
         this.bikeStore = new BikeStore(this);
 
         // Create the parts store
+        /* tslint:disable:no-bitwise */
         if (((parts & PartBrands.AFAM) !== 0) ||
             ((parts & PartBrands.DC) !== 0) ||
             ((parts & PartBrands.Threed) !== 0)) {
@@ -47,6 +46,7 @@ export class AppStore {
         else {
             this.partStore = new PartStore();
         }
+        /* tslint:enable:no-bitwise */
     }
 
     public get BikeId(): number {

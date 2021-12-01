@@ -14,15 +14,12 @@ interface IKitListProps {
  */
 @observer
 export class KitList extends React.Component<IKitListProps, {}> {
-
     constructor(props: IKitListProps) {
-        super(props);       
+        super(props);
     }
-      
 
     public render() {
         if (this.props.store.hasKits) {
-
             let kitComponents = null;
             const kits = this.props.store.kits;
 

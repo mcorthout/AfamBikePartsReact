@@ -15,8 +15,8 @@ interface IBatteryContainerProps {
 @observer
 export class BatteryContainer extends React.Component<IBatteryContainerProps, {}> {
     constructor(props: IBatteryContainerProps) {
-        super(props);       
-    }   
+        super(props);
+    }
 
     public render() {
         if (this.props.store.batteries.length !== 0) {

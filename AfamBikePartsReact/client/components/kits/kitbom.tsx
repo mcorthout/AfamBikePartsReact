@@ -19,7 +19,6 @@ interface IKitBomListState {
  */
 @observer
 export class KitBom extends React.Component<IKitBomProps, IKitBomListState> {
-
     constructor(props: IKitBomProps) {
         super(props);
 
@@ -108,7 +107,7 @@ export class KitBom extends React.Component<IKitBomProps, IKitBomListState> {
                             <Sprocket
                                 kit={this.props.kit}
                                 store={this.props.store}
-                                side="front"                                
+                                side="front"
                             />
                             <Chain
                                 kit={this.props.kit}
@@ -125,5 +124,4 @@ export class KitBom extends React.Component<IKitBomProps, IKitBomListState> {
             </div>
         );
     }
-
 }

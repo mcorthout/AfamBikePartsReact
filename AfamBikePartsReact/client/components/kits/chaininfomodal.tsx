@@ -7,14 +7,12 @@ interface IChainInfoModalProps {
     store: KitStore;
     info: ChainInfoModel | undefined;
     show: boolean;
-    onHide: Function;
+    onHide: () => void;
 }
 
 @observer export class ChainInfoModal extends React.Component<IChainInfoModalProps, {}> {
-
     public render() {
         if (this.props.show && this.props.info) {
-
             const info = this.props.info;
             const poly = this.props.store.polyglot;
 
@@ -67,7 +65,7 @@ interface IChainInfoModalProps {
                                 </div>
                                 <div className="chain-info-right">
                                     <div>
-                                        <img src="https://afam.com/wordpress/wp-content/themes/netAfam/afamparts/chain_dim.png"/>
+                                        <img src="https://afam.com/wordpress/wp-content/themes/netAfam/afamparts/chain_dim.png" />
                                     </div>
                                 </div>
                             </div>
@@ -90,5 +88,4 @@ interface IChainInfoModalProps {
             return null;
         }
     }
-
 }

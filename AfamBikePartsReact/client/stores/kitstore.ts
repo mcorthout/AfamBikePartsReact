@@ -1,13 +1,12 @@
-﻿import { action, computed, observable } from "mobx";
+﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { AppStore } from "./appstore";
-import { ChainModel, KitModel, KitState, SprocketModel, ChainInfoModel } from "../models";
-import { PartStore } from "./partstore";
+import { ChainInfoModel, ChainModel, KitModel, KitState, SprocketModel } from "../models";
 import { PartService } from "../services";
 import { InfoService } from "../services/infoservice";
+import { AppStore } from "./appstore";
+import { PartStore } from "./partstore";
 
 export class KitStore extends PartStore {
-
     public polyglot: Polyglot;
 
     // The kits managed by this store
@@ -62,7 +61,7 @@ export class KitStore extends PartStore {
         this.ChainImageModalVisible = true;
     }
 
-    // A modal to display chain technical information  
+    // A modal to display chain technical information
     @observable
     public ChainInfoModalVisible: boolean;
 
@@ -84,6 +83,8 @@ export class KitStore extends PartStore {
 
     constructor(public appStore: AppStore) {
         super();
+
+        makeObservable(this);
 
         this.kits = [];
         this.bikeId = 0;
@@ -116,7 +117,6 @@ export class KitStore extends PartStore {
         } else {
             return false;
         }
-
     }
 
     @computed
@@ -131,7 +131,6 @@ export class KitStore extends PartStore {
 
     @action
     public handleSprocketChange(kit: KitModel, side: string, sprocket: SprocketModel): void {
-
         const kitState = kit.CurrentState;
 
         let front = kitState.SelectedFrontSprocket;
@@ -225,7 +224,7 @@ export class KitStore extends PartStore {
         const newChains = chains;
 
         newChains.forEach((c) => {
-            c.Length = newChainLength,
+            c.Length = newChainLength;
             c.FullName = c.ChainBaseName + " " + newChainLength.toFixed(0) + "L";
         });
 
@@ -252,6 +251,4 @@ export class KitStore extends PartStore {
             this.ChainInfoModalVisible = false;
         }
     }
-
-
 }

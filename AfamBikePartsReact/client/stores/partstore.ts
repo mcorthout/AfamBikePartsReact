@@ -2,7 +2,17 @@
 import { BikeReverseModel } from "../models";
 
 export class PartStore {
-    public BikeId: number;
+    private _bike: number;
+
+    public get BikeId(): number {
+        return this._bike;
+    }
+
+    public set BikeId(value: number) {
+        this._bike = value;
+    }
+
     public ReversedBikes: BikeReverseModel[];
+
     public polyglot: Polyglot;
 }

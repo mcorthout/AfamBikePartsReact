@@ -14,9 +14,9 @@ interface IFilterContainerProps {
 @observer
 export class FilterContainer extends React.Component<IFilterContainerProps, {}> {
     constructor(props: IFilterContainerProps) {
-        super(props);         
+        super(props);
     }
-   
+
     public render() {
         if (this.props.store.filters.length !== 0) {
             return (

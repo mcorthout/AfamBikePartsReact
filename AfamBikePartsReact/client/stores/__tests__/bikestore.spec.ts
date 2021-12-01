@@ -9,53 +9,52 @@ BikeService.GetBrands = (parts: number, bike: BikeModel, done: (brands: string[]
 }
 
 BikeService.GetCCs = (parts: number, bike: BikeModel, done: (ccs: string[]) => void): void => {
-    if (bike.selectedBrand == "A") {
+    if (bike.selectedBrand === "A") {
         done(["CC1"]);
     }
-    else if (bike.selectedBrand == "B") {
+    else if (bike.selectedBrand === "B") {
         done(["CC2", "CC3"]);
     }
     else {
         done([]);
-    }    
+    }
 }
 
 BikeService.GetModels = (parts: number, bike: BikeModel, done: (models: string[]) => void): void => {
-    if (bike.selectedCc == "CC1") {
-        done(["M1",]);
+    if (bike.selectedCc === "CC1") {
+        done(["M1", ]);
     }
-    else if (bike.selectedCc == "CC3") {
+    else if (bike.selectedCc === "CC3") {
         done(["M2", "M3"]);
     }
     else {
         done([]);
-    }    
+    }
 }
 
 BikeService.GetYears = (parts: number, bike: BikeModel, done: (years: string[]) => void): void => {
-    if (bike.selectedModel == "M1") {
+    if (bike.selectedModel === "M1") {
         done(["Y1"]);
     }
-    else if (bike.selectedModel == "M3") {
+    else if (bike.selectedModel === "M3") {
         done(["Y2", "Y3"]);
     }
     else {
         done([]);
-    }    
+    }
 }
 
 BikeService.GetBikes = (parts: number, bike: BikeModel, language: string = "en", done: (parts: number[]) => void): void => {
-    if (bike.selectedYear == "Y1") {
+    if (bike.selectedYear === "Y1") {
         done([1]);
     }
-    else if (bike.selectedYear == "Y3") {
+    else if (bike.selectedYear === "Y3") {
         done([2, 3]);
     }
     else {
         done([]);
-    }  
+    }
 }
-
 
 describe("BikeStore", () => {
     it("contains a list of bike brands", () => {

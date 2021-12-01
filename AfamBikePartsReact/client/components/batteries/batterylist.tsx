@@ -3,7 +3,7 @@ import { observer } from "mobx-react";
 import { BatteryStore } from "../../stores";
 
 interface IBatteryListProps {
-    store: BatteryStore;    
+    store: BatteryStore;
 }
 
 interface IBatteryListState {
@@ -15,7 +15,6 @@ interface IBatteryListState {
  */
 @observer
 export class BatteryList extends React.Component<IBatteryListProps, IBatteryListState> {
-
     constructor(props: IBatteryListProps) {
         super(props);
 
@@ -47,7 +46,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
     private updateWindowDimensions() {
         const isCollapsed = (window.innerWidth < 800);
 
-        if (this.state.collapsed != isCollapsed) {
+        if (this.state.collapsed !== isCollapsed) {
             this.setState({
                 collapsed: isCollapsed,
             });
@@ -61,7 +60,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                 parent.removeChild(item);
             }
         }
-    }      
+    }
 
     private renderDefault() {
         let theParts = null;
@@ -72,7 +71,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
         if (batteries) {
             theParts = batteries.map((s, i) =>
                 <tr key={i.toString()} >
-                    <td data-label="Item" className="cell-center">{s.Part}</td>                        
+                    <td data-label="Item" className="cell-center">{s.Part}</td>
                     <td data-label="EAN" className="cell-center">{s.EAN}</td>
                     <td data-label="Type" className="cell-center">{s.BatteryType}</td>
                     <td data-label="Volt" className="cell-center">{s.Volt} V</td>
@@ -213,5 +212,4 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
             </div>
         );
     }
-
 }

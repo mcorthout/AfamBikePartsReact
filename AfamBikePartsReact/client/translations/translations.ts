@@ -129,7 +129,7 @@
         Applications: "Toepassingen",
         ChainType: "Kettingtype",
         PitchMm: "Stap",
-        PitchWidth: "Breedte",        
+        PitchWidth: "Breedte",
         Description: "Omschrijving",
         OuterColor: "Kleur",
         Application: "Toepassing",

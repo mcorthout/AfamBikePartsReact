@@ -8,12 +8,12 @@ const battery = new BatteryModel();
 const batteries: BatteryModel[] = [battery];
 
 PartService.GetBatteries = (partBrands: number, bikeId: number, language: string, done: (parts: BatteryModel[]) => void) => {
-    if (partBrands == PartBrands.Shido && bikeId == 1) {
+    if (partBrands === PartBrands.Shido && bikeId === 1) {
         done(batteries);
     }
     else {
         done([]);
-    }    
+    }
 };
 
 describe("BatteryStore", () => {
@@ -23,11 +23,11 @@ describe("BatteryStore", () => {
         expect(store.BikeId).toBe(0);
     });
 
-    it("retrieves a list of batteries for a motorbike", () => {       
+    it("retrieves a list of batteries for a motorbike", () => {
         const store = new BatteryStore(new AppStore(PartBrands.Shido, "nl"));
         store.BikeId = 1;
         expect(store.hasBatteries).toBeTruthy();
         expect(store.batteries.length).toBe(1);
         expect(store.batteries[0]).toBeInstanceOf(BatteryModel);
-    });   
+    });
 })

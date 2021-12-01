@@ -1,12 +1,11 @@
-﻿import { action, computed, observable } from "mobx";
+﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { AppStore } from "./appstore";
-import { PartStore } from "./partstore";
 import { BatteryModel, BikeReverseModel } from "../models";
 import { PartService, ReverseService } from "../services";
+import { AppStore } from "./appstore";
+import { PartStore } from "./partstore";
 
 export class BatteryStore extends PartStore {
-
     public polyglot: Polyglot;
 
     // The list of batteries managed by this store
@@ -72,15 +71,15 @@ export class BatteryStore extends PartStore {
     public ShowReversedBikes(battery: BatteryModel): void {
         this.ReversedBikes = [];
         this.BatteryReverseTitle = battery.Part;
-        ReverseService.GetBikes(battery.PartId, this.updateReverseBikes);        
-    }    
+        ReverseService.GetBikes(battery.PartId, this.updateReverseBikes);
+    }
 
     @action
     private updateReverseBikes(newBikes: BikeReverseModel[]): void {
         this.ReversedBikes = newBikes;
         this.BatteryReverseModalVisible = true;
     }
-  
+
     // Determine whether or not this store contains batteries
     @computed
     public get hasBatteries(): boolean {
@@ -89,7 +88,6 @@ export class BatteryStore extends PartStore {
         } else {
             return false;
         }
-
     }
 
     // The motorbike id for which this store manages batteries
@@ -118,8 +116,7 @@ export class BatteryStore extends PartStore {
     // Process the retrieved list of batteries
     @action
     private updateBatteries(newBatteries: BatteryModel[]): void {
-
-        for (let battery of newBatteries) {
+        for (const battery of newBatteries) {
             battery.LayoutDrawing = "https://service.afam.com/webshop/images/batteries/layout/" + battery.LayoutDrawing;
             battery.TerminalTop = "https://service.afam.com/webshop/images/batteries/terminal/t" + battery.TerminalType + "t.png";
             battery.TerminalFront = "https://service.afam.com/webshop/images/batteries/terminal/t" + battery.TerminalType + "f.png";
@@ -127,11 +124,13 @@ export class BatteryStore extends PartStore {
         }
 
         this.batteries = newBatteries;
-    }   
+    }
 
     // Create a new store
     constructor(public appStore: AppStore) {
         super();
+
+        makeObservable(this);
 
         this.batteries = [];
         this.bikeId = 0;
@@ -151,5 +150,4 @@ export class BatteryStore extends PartStore {
         this.updateBatteries = this.updateBatteries.bind(this);
         this.updateReverseBikes = this.updateReverseBikes.bind(this);
     }
-
 }

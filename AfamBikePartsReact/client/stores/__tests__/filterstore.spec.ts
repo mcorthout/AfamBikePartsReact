@@ -8,7 +8,7 @@ const filter = new FilterModel();
 const filters: FilterModel[] = [filter];
 
 PartService.GetFilters = (partBrands: number, bikeId: number, language: string, done: (parts: FilterModel[]) => void) => {
-    if (partBrands == PartBrands.Ison && bikeId == 1) {
+    if (partBrands === PartBrands.Ison && bikeId === 1) {
         done(filters);
     }
     else {

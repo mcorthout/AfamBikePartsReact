@@ -18,7 +18,6 @@ interface IChainState {
  */
 @observer
 export class Chain extends React.Component<IChainProps, IChainState> {
-
     constructor(props: IChainProps) {
         super(props);
 
@@ -28,7 +27,6 @@ export class Chain extends React.Component<IChainProps, IChainState> {
     }
 
     public render() {
-
         const poly = this.props.store.polyglot;
 
         const selectedChain = this.props.kit.CurrentState.SelectedChain;
@@ -120,7 +118,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         this.setState({
             thumbnailVisible: false,
         });
-    }    
+    }
 
     private thumbnail(chain: ChainModel, imageURL: string) {
         if (this.state.thumbnailVisible) {
@@ -146,7 +144,6 @@ export class Chain extends React.Component<IChainProps, IChainState> {
      * Extract the possible chain types from the list of chains
      */
     private getTypes(chains: ChainModel[]): string[] {
-
         const types: string[] = [];
 
         for (const chain of chains) {
@@ -165,7 +162,6 @@ export class Chain extends React.Component<IChainProps, IChainState> {
      * @param {string} atype - The type to filter on
      */
     private getColors(chains: ChainModel[], atype: string): string[] {
-
         const colors: string[] = [];
 
         for (const chain of chains) {
@@ -278,5 +274,4 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         /* Signal the parent component that the chain was changed */
         this.props.store.handleChainChange(this.props.kit, newChain);
     }
-
 }

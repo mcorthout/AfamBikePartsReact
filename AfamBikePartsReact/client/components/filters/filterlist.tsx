@@ -15,7 +15,6 @@ interface IFilterListState {
  */
 @observer
 export class FilterList extends React.Component<IFilterListProps, IFilterListState> {
-
     constructor(props: IFilterListProps) {
         super(props);
 
@@ -47,7 +46,7 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
     private updateWindowDimensions() {
         const isCollapsed = (window.innerWidth < 800);
 
-        if (this.state.collapsed != isCollapsed) {
+        if (this.state.collapsed !== isCollapsed) {
             this.setState({
                 collapsed: isCollapsed,
             });
@@ -61,7 +60,7 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                 parent.removeChild(item);
             }
         }
-    }   
+    }
 
     private renderDefault() {
         let theParts = null;
@@ -200,5 +199,4 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
             </div>
         );
     }
-
 }

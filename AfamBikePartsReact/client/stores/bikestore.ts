@@ -1,11 +1,10 @@
-﻿import { action, observable } from "mobx";
+﻿import { action, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { AppStore } from "./appstore";
 import { BikeModel } from "../models";
 import { BikeService } from "../services";
+import { AppStore } from "./appstore";
 
 export class BikeStore {
-
     @observable
     public bike: BikeModel;
 
@@ -14,6 +13,8 @@ export class BikeStore {
     private polyglot: Polyglot;
 
     constructor(public appStore: AppStore) {
+        makeObservable(this);
+
         this.bike = new BikeModel();
 
         this.selectBrand = this.selectBrand.bind(this);
@@ -37,7 +38,6 @@ export class BikeStore {
 
     @action
     private updateBrands(brands: string[]): void {
-
         if (brands.length > 1) {
             brands.unshift(this.polyglot.t("SelectBrand"));
         }
@@ -70,7 +70,6 @@ export class BikeStore {
 
     @action
     private updateCcs(ccs: string[]): void {
-
         if (ccs.length > 1) {
             ccs.unshift(this.polyglot.t("SelectCc"));
         }
@@ -114,7 +113,6 @@ export class BikeStore {
 
     @action
     public selectModel(model: string): void {
-
         this.bike.selectedModel = model;
 
         this.bike.years = [];

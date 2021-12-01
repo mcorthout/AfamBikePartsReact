@@ -14,7 +14,7 @@ This project is intended for AFAM customers.
 
 ## Requirements
 
-* A recent version of Visual Studio and the .NET Core framework. Tested with VS 2019 and .Net Core 3.1  
+* A recent version of Visual Studio and the .NET Core framework. Tested with VS 2019 and .NET 5.0  
 * node and npm
 
 ## Installation

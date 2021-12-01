@@ -6,7 +6,7 @@ import { PartStore } from "../../stores";
 interface IReverseModalProps {
     store: PartStore;
     show: boolean;
-    onHide: Function;
+    onHide: () => void;
     title: string;
 }
 
@@ -16,35 +16,33 @@ interface IReverseModalState {
 
 @observer
 export class ReverseModal extends React.Component<IReverseModalProps, IReverseModalState> {
-
-    private readonly page_size: number = 20;
+    private readonly pageSize: number = 20;
 
     constructor(props: IReverseModalProps) {
-        super(props);    
+        super(props);
 
         this.state = {
             selectedPage: 0,
         }
 
         this.updatePage = this.updatePage.bind(this);
-    }   
+    }
 
     private updatePage(data: any): void {
         this.setState({
             selectedPage: data.selected,
         });
-    }       
+    }
 
     public render() {
         if (this.props.show) {
-
             document.body.classList.add("modal-showing");
 
             let bikelist = null;
 
             const allBikes = this.props.store.ReversedBikes;
-            const pageCount = Math.ceil(allBikes.length / this.page_size);
-            const bikesToDisplay = allBikes.slice(this.state.selectedPage * this.page_size, (this.state.selectedPage + 1) * this.page_size);
+            const pageCount = Math.ceil(allBikes.length / this.pageSize);
+            const bikesToDisplay = allBikes.slice(this.state.selectedPage * this.pageSize, (this.state.selectedPage + 1) * this.pageSize);
 
             if (bikesToDisplay) {
                 bikelist = bikesToDisplay.map((b, i) =>
@@ -59,7 +57,7 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
             }
 
             const poly = this.props.store.polyglot;
-            
+
             return (
                 <div className="modal_background" >
                     <div className="modal_content">
@@ -116,11 +114,11 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
                             </button>
                         </div>
                     </div>
-                </div>                
+                </div>
             );
         }
         else {
             return null;
         }
-    }   
+    }
 }

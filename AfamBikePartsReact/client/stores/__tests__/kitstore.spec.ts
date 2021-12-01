@@ -1,7 +1,7 @@
 ﻿import { AppStore } from "../appstore";
 import { KitStore } from "../kitstore";
 import { PartBrands } from "../../constants";
-import { KitModel, DefaultKitState } from "../../models";
+import { DefaultKitState, KitModel } from "../../models";
 import { PartService } from "../../services/partservice";
 
 const kit: KitModel = new KitModel();
@@ -86,7 +86,7 @@ kit.CurrentState = DefaultKitState;
 const kits: KitModel[] = [kit];
 
 PartService.GetKits = (partBrands: number, bikeId: number, language: string, done: (parts: KitModel[]) => void) => {
-    if (partBrands == PartBrands.AFAM && bikeId == 1) {
+    if (partBrands === PartBrands.AFAM && bikeId === 1) {
         done(kits);
     }
     else {
@@ -156,5 +156,4 @@ describe("KitStore", () => {
         })
         expect(store.kits[0].CurrentState.CurrentChainLength).toBe(122);
     });
-
 })

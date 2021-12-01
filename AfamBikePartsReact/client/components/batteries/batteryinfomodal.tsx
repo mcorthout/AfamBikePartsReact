@@ -7,14 +7,12 @@ interface IBatteryInfoModalProps {
     store: BatteryStore;
     battery: BatteryModel;
     show: boolean;
-    onHide: Function;
+    onHide: () => void;
 }
 
 @observer export class BatteryInfoModal extends React.Component<IBatteryInfoModalProps, {}> {
-
     public render() {
         if (this.props.show) {
-
             const battery = this.props.battery;
             const poly = this.props.store.polyglot;
 
@@ -31,7 +29,7 @@ interface IBatteryInfoModalProps {
                                 {battery.Part}
                             </div>
                             <button type="button"
-                                className="close" 
+                                className="close"
                                 onClick={(e) => {
                                     this.props.onHide();
                                 }}
@@ -85,17 +83,17 @@ interface IBatteryInfoModalProps {
                                         </div>
                                         <div className="battery-info-row">
                                             <div className="battery-info-cell-label cell-right">{poly.t("DryWeight")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoDryWeight">{(battery.DryWeight == 0) ? "--" : battery.DryWeight}</div>
+                                            <div className="battery-info-cell cell-right" id="batterInfoDryWeight">{(battery.DryWeight === 0) ? "--" : battery.DryWeight}</div>
                                             <div className="battery-info-cell">kg</div>
                                         </div>
                                         <div className="battery-info-row">
                                             <div className="battery-info-cell-label cell-right">{poly.t("FilledWeight")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoFilledWeight">{(battery.FilledWeight == 0) ? "--" : battery.FilledWeight}</div>
+                                            <div className="battery-info-cell cell-right" id="batterInfoFilledWeight">{(battery.FilledWeight === 0) ? "--" : battery.FilledWeight}</div>
                                             <div className="battery-info-cell">kg</div>
                                         </div>
                                         <div className="battery-info-row">
                                             <div className="battery-info-cell-label cell-right">{poly.t("AcidVolume")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoAcidVolume">{(battery.AcidVolume == 0) ? "--" : battery.AcidVolume}</div>
+                                            <div className="battery-info-cell cell-right" id="batterInfoAcidVolume">{(battery.AcidVolume === 0) ? "--" : battery.AcidVolume}</div>
                                             <div className="battery-info-cell">{poly.t("Liter")}</div>
                                         </div>
                                         <div className="battery-info-row">
@@ -151,5 +149,4 @@ interface IBatteryInfoModalProps {
             return null;
         }
     }
-
 }

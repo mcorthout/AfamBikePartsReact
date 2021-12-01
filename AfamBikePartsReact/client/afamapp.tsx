@@ -13,7 +13,7 @@ function renderApp() {
         if (!parts) {
             const brands = root.dataset.parts;
             if (brands) {
-                const brandArray = brands.replace(" ","").split(",");
+                const brandArray = brands.replace(" ", "").split(",");
                 parts = brandsToParts(brandArray);
             } else {
                 parts = 0;

@@ -1,4 +1,4 @@
-﻿import { observable } from "mobx";
+﻿import { makeObservable, observable } from "mobx";
 
 export class BikeModel {
 
@@ -16,17 +16,19 @@ export class BikeModel {
 
     constructor() {
 
-      this.brands = [];
-      this.selectedBrand = "";
+        makeObservable(this);
 
-      this.ccs = [];
-      this.selectedCc = "";
+        this.brands = [];
+        this.selectedBrand = "";
 
-      this.models = [];
-      this.selectedModel = "";
+        this.ccs = [];
+        this.selectedCc = "";
 
-      this.years = [];
-      this.selectedYear = "";
+        this.models = [];
+        this.selectedModel = "";
+
+        this.years = [];
+        this.selectedYear = "";
     }
 
 }
