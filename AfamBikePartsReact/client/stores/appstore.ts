@@ -40,7 +40,7 @@ export class AppStore {
         else if (((parts & PartBrands.Shido) !== 0) || ((parts & PartBrands.Nitro) !== 0)) {
             this.partStore = new BatteryStore(this);
         }
-        else if ((parts & PartBrands.Ison) !== 0) {
+        else if (((parts & PartBrands.Ison) !== 0) || ((parts & PartBrands.MIW) !== 0)) {
             this.partStore = new FilterStore(this);
         }
         else {

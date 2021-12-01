@@ -42,7 +42,8 @@ export class Parts extends React.Component<IPartsProps, {}> {
             PartBrands.Threed +
             PartBrands.Nitro +
             PartBrands.Shido +
-            PartBrands.Ison;
+            PartBrands.Ison +
+            PartBrands.MIW;
 
         // tslint:disable-next-line:no-bitwise
         return ((this.props.parts & supported) !== 0);
