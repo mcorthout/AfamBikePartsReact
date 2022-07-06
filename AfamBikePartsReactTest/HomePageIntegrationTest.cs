@@ -57,7 +57,8 @@ namespace AfamBikePartsReactTest
                 {"Groups[0].ProductGroups[2].Selected", "false" },
                 {"Groups[1].ProductGroups[0].Selected", "false" },
                 {"Groups[1].ProductGroups[1].Selected", "false" },
-                {"Groups[2].ProductGroups[0].Selected", "false" }
+                {"Groups[2].ProductGroups[0].Selected", "false" },
+                {"Groups[2].ProductGroups[1].Selected", "false" },
             };
 
             var content = new FormUrlEncodedContent(fields);
