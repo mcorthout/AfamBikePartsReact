@@ -36,4 +36,5 @@
     StandardRivet: string;
     SoftRivet: string;
     SealType: string;
+    Length: number;
 }

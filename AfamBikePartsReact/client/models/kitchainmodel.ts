@@ -1,4 +1,4 @@
-﻿export const DefaultChain: ChainModel = {
+﻿export const DefaultKitChain: KitChainModel = {
     ChainType: "",
     ChainColor: "",
     ChainBaseName: "",
@@ -8,7 +8,7 @@
     FullName: "",
 };
 
-export class ChainModel {
+export class KitChainModel {
     public ChainType: string;
     public ChainColor: string;
     public ChainBaseName: string;

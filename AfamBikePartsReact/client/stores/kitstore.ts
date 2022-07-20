@@ -1,6 +1,6 @@
 ﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { ChainInfoModel, ChainModel, KitModel, KitState, SprocketModel } from "../models";
+import { ChainInfoModel, KitChainModel, KitModel, KitState, SprocketModel } from "../models";
 import { PartService } from "../services";
 import { InfoService } from "../services/infoservice";
 import { AppStore } from "./appstore";
@@ -55,7 +55,7 @@ export class KitStore extends PartStore {
     }
 
     @action
-    public ShowChainImage(chain: ChainModel, url: string): void {
+    public ShowChainImage(chain: KitChainModel, url: string): void {
         this.ChainImageTitle = chain.FullName;
         this.ChainImageUrl = url;
         this.ChainImageModalVisible = true;
@@ -74,7 +74,7 @@ export class KitStore extends PartStore {
         this.ChainInfoModalVisible = false;
     }
 
-    public ShowChainInfo(chain: ChainModel): void {
+    public ShowChainInfo(chain: KitChainModel): void {
         InfoService.GetChainInfo(chain.FullName, this.appStore.language, this.loadChainInfo);
     }
 
@@ -180,7 +180,7 @@ export class KitStore extends PartStore {
     }
 
     @action
-    public handleChainChange(kit: KitModel, chain: ChainModel): void {
+    public handleChainChange(kit: KitModel, chain: KitChainModel): void {
         kit.CurrentState.SelectedChain = chain;
     }
 
@@ -205,7 +205,7 @@ export class KitStore extends PartStore {
             const state: KitState = {
                 CurrentChainLength: k.ChainLength,
                 CurrentChains: k.Chains,
-                SelectedChain: k.Chains.find((c: ChainModel) => c.FullName === k.Chain) || k.Chains[0],
+                SelectedChain: k.Chains.find((c: KitChainModel) => c.FullName === k.Chain) || k.Chains[0],
                 SelectedFrontSprocket: k.FrontSprockets.find((s: SprocketModel) => s.SprocketName === k.FrontSprocket)
                     || k.FrontSprockets[0],
                 SelectedRearSprocket: k.RearSprockets.find((s: SprocketModel) => s.SprocketName === k.RearSprocket)
@@ -220,7 +220,7 @@ export class KitStore extends PartStore {
      * @param {number} newChainLength - The new length
      */
     @action
-    private updateChainLengths(chains: ChainModel[], newChainLength: number): ChainModel[] {
+    private updateChainLengths(chains: KitChainModel[], newChainLength: number): KitChainModel[] {
         const newChains = chains;
 
         newChains.forEach((c) => {
@@ -236,9 +236,9 @@ export class KitStore extends PartStore {
      * @param {number} newChainLength - The new length
      */
     @action
-    private updateSelectedChain(chains: ChainModel[],
-                                selectedChain: ChainModel,
-                                newChainLength: number): ChainModel {
+    private updateSelectedChain(chains: KitChainModel[],
+                                selectedChain: KitChainModel,
+                                newChainLength: number): KitChainModel {
         return chains.find((c) => c.ChainBaseName === selectedChain.ChainBaseName) || chains[0];
     }
 

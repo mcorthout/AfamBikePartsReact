@@ -6,6 +6,7 @@ import { KitStore } from "./kitstore";
 import { BatteryStore } from "./batterystore";
 import { FilterStore } from "./filterstore";
 import { PartBrands } from "../constants";
+import { ChainStore } from "./chainstore";
 
 export class AppStore {
     public polyglot: Polyglot;
@@ -42,6 +43,9 @@ export class AppStore {
         }
         else if (((parts & PartBrands.Ison) !== 0) || ((parts & PartBrands.MIW) !== 0)) {
             this.partStore = new FilterStore(this);
+        }
+        else if ((parts & PartBrands.Chains) !== 0) {
+            this.partStore = new ChainStore(this);
         }
         else {
             this.partStore = new PartStore();

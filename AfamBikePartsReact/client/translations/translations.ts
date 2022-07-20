@@ -75,6 +75,8 @@
         SealType: "Seal type",
         KgPer100Links: "kg per 100 links",
         Close: "Close",
+        ApplicableChains: "Applicable chains",
+        Pitch: "Pitch",
     },
     nl: {
         BikeSelect: "Kies een motorfiets",
@@ -152,6 +154,8 @@
         SealType: "Dichting type",
         KgPer100Links: "kg per 100 schakels",
         Close: "Sluiten",
+        ApplicableChains: "Geschikte kettingen",
+        Pitch: "Stap",
     },
     de: {
         BikeSelect: "Motorradwahl",
@@ -229,6 +233,8 @@
         SealType: "Dichtung Typ",
         KgPer100Links: "kg pro 100 Glieder",
         Close: "Schließen",
+        ApplicableChains: "Geeignete Ketten",
+        Pitch: "Teilung",
     },
     fr: {
         BikeSelect: "Choisissez une moto",
@@ -306,5 +312,7 @@
         SealType: "Type de joint",
         KgPer100Links: "kg par 100 maillons",
         Close: "Fermer",
+        ApplicableChains: "Chaînes possibles",
+        Pitch: "Pas",
     },
 };

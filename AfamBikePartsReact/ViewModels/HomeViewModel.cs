@@ -65,6 +65,14 @@ namespace AfamBikePartsReact.ViewModels
                          new ProductGroup{Name="Ison filters", Value="Ison", Selected=true},
                          new ProductGroup{Name="MIW filters", Value="MIW", Selected=false}
                     }
+                  },
+                  new MainGroup {
+                    Name = "Chains",
+                    Value = "chains",
+                    Selected = false,
+                    ProductGroups = new ProductGroup[] {
+                         new ProductGroup{Name="AFAM chains", Value="Chains", Selected=true}
+                    }
                 }
             };
 

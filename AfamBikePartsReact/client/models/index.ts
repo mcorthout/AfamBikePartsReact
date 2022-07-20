@@ -1,6 +1,6 @@
 export { KitModel } from "./kitmodel";
 export { DefaultKitState, KitState } from "./kitstate";
-export { ChainModel } from "./chainmodel";
+export { KitChainModel } from "./kitchainmodel";
 export { SprocketModel } from "./sprocketmodel";
 export { BikeModel } from "./bikemodel";
 export { BatteryModel } from "./batterymodel";

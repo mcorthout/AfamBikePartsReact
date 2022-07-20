@@ -1,26 +1,27 @@
 import axios from "axios";
 import { BikeModel } from "../models";
+import { ApplicationHost } from "../constants";
 
 export class BikeService {
 
     public static GetBrands(parts: number, bike: BikeModel, done: (brands: string[]) => void): void {
-        BikeService.Get<string[]>(`https://service.afam.com/api/applications/${parts}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}`, done, []);
     }
 
     public static GetCCs(parts: number, bike: BikeModel, done: (ccs: string[]) => void): void {
-        BikeService.Get<string[]>(`https://service.afam.com/api/applications/${parts}?brand=${bike.selectedBrand}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}`, done, []);
     }
 
     public static GetModels(parts: number, bike: BikeModel, done: (models: string[]) => void): void {
-        BikeService.Get<string[]>(`https://service.afam.com/api/applications/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}`, done, []);
     }
 
     public static GetYears(parts: number, bike: BikeModel, done: (years: string[]) => void): void {
-        BikeService.Get<string[]>(`https://service.afam.com/api/applications/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}`, done, []);
     }
 
     public static GetBikes(parts: number, bike: BikeModel, language: string = "en", done: (bikes: number[]) => void): void {
-        BikeService.Get<number[]>(`https://service.afam.com/api/applications/${parts}/bikes?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}&year=${bike.selectedYear}&language=${language}`, done, []);
+        BikeService.Get<number[]>(`${ApplicationHost}/${parts}/bikes?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}&year=${bike.selectedYear}&language=${language}`, done, []);
     }
 
     private static Get<T>(URL: string, done: (values: T) => void, errorValue: T): void {

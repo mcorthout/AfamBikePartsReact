@@ -6,5 +6,11 @@
     Nitro = 16,
     Yuasa = 32,
     Ison = 64,
-    MIW = 128
-}
+    MIW = 128,
+    Chains = 256,
+    FrontSprockets = 512,
+    RearSprockets = 1024
+};
+
+export const ApplicationHost: string = "https://service.afam.com/api/applications";
+//export const ApplicationHost: string = "http://localhost:58224/applications";

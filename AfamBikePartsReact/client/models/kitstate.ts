@@ -1,18 +1,18 @@
-﻿import { ChainModel, DefaultChain } from "./chainmodel";
+﻿import { KitChainModel, DefaultKitChain } from "./kitchainmodel";
 import { DefaultSprocket, SprocketModel } from "./sprocketmodel";
 
 export const DefaultKitState: KitState = {
-    CurrentChains: [DefaultChain],
+    CurrentChains: [DefaultKitChain],
     CurrentChainLength: 0,
-    SelectedChain: DefaultChain,
+    SelectedChain: DefaultKitChain,
     SelectedFrontSprocket: DefaultSprocket,
     SelectedRearSprocket: DefaultSprocket,
 };
 
 export class KitState {
-    public CurrentChains: ChainModel[];
+    public CurrentChains: KitChainModel[];
     public CurrentChainLength: number;
-    public SelectedChain: ChainModel;
+    public SelectedChain: KitChainModel;
     public SelectedFrontSprocket: SprocketModel;
     public SelectedRearSprocket: SprocketModel;
 }

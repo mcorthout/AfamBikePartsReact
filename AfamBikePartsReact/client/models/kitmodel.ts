@@ -1,5 +1,5 @@
 ﻿import { DefaultKitState, KitState } from "./kitstate";
-import { ChainModel } from "./chainmodel";
+import { KitChainModel } from "./kitchainmodel";
 import { SprocketModel } from "./sprocketmodel";
 
 export class KitModel {
@@ -25,7 +25,7 @@ export class KitModel {
     public RearMaximumTeeth: number;
     public FrontSprockets: SprocketModel[];
     public RearSprockets: SprocketModel[];
-    public Chains: ChainModel[];
+    public Chains: KitChainModel[];
     public Language: number;
     public KitType: string;
     public CurrentState: KitState;

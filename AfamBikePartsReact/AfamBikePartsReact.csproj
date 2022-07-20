@@ -15,7 +15,7 @@
     <None Remove="client\constants\constants.ts" />
     <None Remove="client\models\bikereversemodel.ts" />
     <None Remove="client\models\chaininfomodel.ts" />
-    <None Remove="client\models\chainmodel.ts" />
+    <None Remove="client\models\kitchainmodel.ts" />
     <None Remove="client\models\kitstate.ts" />
     <None Remove="client\models\sprocketmodel.ts" />
     <None Remove="client\react-responsive-modal.d.ts" />
@@ -45,7 +45,7 @@
     <TypeScriptCompile Include="client\constants\constants.ts" />
     <TypeScriptCompile Include="client\models\bikereversemodel.ts" />
     <TypeScriptCompile Include="client\models\chaininfomodel.ts" />
-    <TypeScriptCompile Include="client\models\chainmodel.ts" />
+    <TypeScriptCompile Include="client\models\kitchainmodel.ts" />
     <TypeScriptCompile Include="client\models\kitstate.ts" />
     <TypeScriptCompile Include="client\models\sprocketmodel.ts" />
     <TypeScriptCompile Include="client\stores\partstore.ts" />

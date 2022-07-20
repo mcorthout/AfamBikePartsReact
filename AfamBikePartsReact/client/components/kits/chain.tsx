@@ -1,7 +1,7 @@
 ﻿import * as React from "react";
 import { observer } from "mobx-react";
 import { KitStore } from "../../stores";
-import { ChainModel, KitModel } from "../../models";
+import { KitChainModel, KitModel } from "../../models";
 
 interface IChainProps {
     kit: KitModel;
@@ -120,7 +120,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         });
     }
 
-    private thumbnail(chain: ChainModel, imageURL: string) {
+    private thumbnail(chain: KitChainModel, imageURL: string) {
         if (this.state.thumbnailVisible) {
             return (
                 <div className="kitpart-thumbnail kitpart-block">
@@ -143,7 +143,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
     /**
      * Extract the possible chain types from the list of chains
      */
-    private getTypes(chains: ChainModel[]): string[] {
+    private getTypes(chains: KitChainModel[]): string[] {
         const types: string[] = [];
 
         for (const chain of chains) {
@@ -161,7 +161,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
      * Extract the possible chain colors for a specific type of chain
      * @param {string} atype - The type to filter on
      */
-    private getColors(chains: ChainModel[], atype: string): string[] {
+    private getColors(chains: KitChainModel[], atype: string): string[] {
         const colors: string[] = [];
 
         for (const chain of chains) {
@@ -185,10 +185,10 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         const selectedType = event.currentTarget.value;
         const chains = this.props.kit.CurrentState.CurrentChains;
 
-        let newChain: ChainModel | undefined;
+        let newChain: KitChainModel | undefined;
 
         /* Try to find a chain with the selected type and the color that is part of the props (i.e. the default color) */
-        const typecolorchains: ChainModel[] = [];
+        const typecolorchains: KitChainModel[] = [];
 
         for (const chain of chains) {
             // If the chain has the required type and color
@@ -207,7 +207,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
 
         /* If no chain could be found, select the first chain of the selected type */
         if (!newChain) {
-            const typechains: ChainModel[] = [];
+            const typechains: KitChainModel[] = [];
 
             for (const chain of chains) {
                 if (chain.ChainType === selectedType) {
@@ -244,10 +244,10 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         const selectedType = this.props.kit.CurrentState.SelectedChain.ChainType;
         const chains = this.props.kit.CurrentState.CurrentChains;
 
-        let newChain: ChainModel | undefined;
+        let newChain: KitChainModel | undefined;
 
         /* Try to find a chain with the selected type and the color that is part of the props (i.e. the default color) */
-        const typecolorchains: ChainModel[] = [];
+        const typecolorchains: KitChainModel[] = [];
 
         for (const chain of chains) {
             if (chain.ChainType === selectedType && chain.ChainColor === selectedColor) {

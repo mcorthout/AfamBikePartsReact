@@ -5,7 +5,9 @@ import { BikeSelect } from "./components/bikes";
 import { KitList } from "./components/kits";
 import { BatteryContainer } from "./components/batteries";
 import { FilterContainer } from "./components/filters";
+import { ChainContainer } from "./components/chains";
 import { PartBrands } from "./constants";
+import { ChainStore } from "./stores/chainstore";
 
 interface IPartsProps {
     parts: number;
@@ -43,7 +45,8 @@ export class Parts extends React.Component<IPartsProps, {}> {
             PartBrands.Nitro +
             PartBrands.Shido +
             PartBrands.Ison +
-            PartBrands.MIW;
+            PartBrands.MIW +
+            PartBrands.Chains;
 
         // tslint:disable-next-line:no-bitwise
         return ((this.props.parts & supported) !== 0);
@@ -58,6 +61,9 @@ export class Parts extends React.Component<IPartsProps, {}> {
         }
         else if (this.store.partStore instanceof FilterStore) {
             return (<FilterContainer store={this.store.partStore} />);
+        }
+        else if (this.store.partStore instanceof ChainStore) {
+            return (<ChainContainer store={this.store.partStore} />);
         }
         else {
             return null;
