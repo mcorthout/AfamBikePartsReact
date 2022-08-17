@@ -56,7 +56,7 @@ export class KitList extends React.Component<IKitListProps, {}> {
                         closeText={this.props.store.polyglot.t("Close")}
                     />
                     <ChainInfoModal
-                        store={this.props.store}
+                        polyglot={this.props.store.polyglot}
                         info={this.props.store.ChainInfo}
                         show={this.props.store.ChainInfoModalVisible}
                         onHide={this.props.store.HideChainInfo}

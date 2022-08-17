@@ -96,12 +96,18 @@ export class ChainStore extends PartStore {
         this.ChainImageModalVisible = false;
         this.ChainImageUrl = "";
 
+        this.ChainInfoModalVisible = false;
+        this.ChainInfo = undefined;
+
         //this.FilterReverseModalVisible = false;
         //this.ReversedBikes = [];
         //this.FilterReverseTitle = "";
 
         this.updateChains = this.updateChains.bind(this);
+
         this.loadChainInfo = this.loadChainInfo.bind(this);
+        this.HideChainInfo = this.HideChainInfo.bind(this);
+
         //this.updateReverseBikes = this.updateReverseBikes.bind(this);
     }
 

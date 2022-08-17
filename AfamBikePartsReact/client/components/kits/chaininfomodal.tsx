@@ -1,10 +1,10 @@
 ﻿import * as React from "react";
 import { observer } from "mobx-react";
-import { KitStore } from "../../stores";
 import { ChainInfoModel } from "../../models";
+import Polyglot = require("node-polyglot");
 
 interface IChainInfoModalProps {
-    store: KitStore;
+    polyglot: Polyglot;
     info: ChainInfoModel | undefined;
     show: boolean;
     onHide: () => void;
@@ -14,7 +14,7 @@ interface IChainInfoModalProps {
     public render() {
         if (this.props.show && this.props.info) {
             const info = this.props.info;
-            const poly = this.props.store.polyglot;
+            const poly = this.props.polyglot;
 
             document.body.classList.add("modal-showing");
 

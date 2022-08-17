@@ -87,6 +87,15 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             />
                         </a>
                     </td>
+                    <td>
+                        <a href="#">
+                            <img
+                                className="info-image"
+                                src="https://afam.com/wp-content/themes/netAfam/afamparts/info.png"
+                                onClick={(e) => { this.props.store.ShowChainInfo(s); e.preventDefault(); }}
+                            />
+                        </a>
+                    </td>                    
                 </tr>)
             }
             );
@@ -104,6 +113,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             <th className="cell-center">{translate.t("Description")}</th>
                             <th className="cell-center">{translate.t("OuterColor")}</th>
                             <th className="cell-center">{translate.t("Image")}</th>
+                            <th className="cell-center">Info</th>
                         </tr>
                     </thead>
                     <tbody>
