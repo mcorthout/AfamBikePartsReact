@@ -53,6 +53,15 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
         }
     }
 
+    private ImageError(item: HTMLImageElement) {
+        if (item) {
+            const parent = item.parentElement;
+            if (parent) {
+                parent.removeChild(item);
+            }
+        }
+    }
+
     private renderDefault() {
         let theParts = null;
 
@@ -60,14 +69,26 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
         const chains = this.props.store.chains;
 
         if (chains) {
-            theParts = chains.map((s, i) =>
-                <tr key={i.toString()} >
+            theParts = chains.map((s, i) => {
+                let chainImage = "https://service.afam.com/webshop/images/chains/" + s.ColorName + ".jpg";
+                return (<tr key={i.toString()} >
                     <td data-label="Item" className="cell-center">{s.ChainName}</td>
                     <td data-label="Pitch" className="cell-center">{s.Pitch}</td>
                     <td data-label="Length" className="cell-center">{s.Length}</td>
                     <td data-label="Description" className="cell-center">{s.Description}</td>
-                    <td data-label="OuterColor" className="cell-center">{s.OuterColor}</td>                    
-                </tr>,
+                    <td data-label="OuterColor" className="cell-center">{s.OuterColor}</td>
+                    <td data-label="Image" className="cell-center">
+                        <a className="image-popup-fit-width" href="#">
+                            <img
+                                src={chainImage}
+                                style={{ borderWidth: "0px", width: "4em" }}
+                                onError={(e) => this.ImageError(e.currentTarget)}
+                                onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
+                            />
+                        </a>
+                    </td>
+                </tr>)
+            }
             );
         }
 
@@ -82,6 +103,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             <th className="cell-center">{translate.t("Length")}</th>
                             <th className="cell-center">{translate.t("Description")}</th>
                             <th className="cell-center">{translate.t("OuterColor")}</th>
+                            <th className="cell-center">{translate.t("Image")}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -99,31 +121,47 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
         const chains = this.props.store.chains;
 
         if (chains) {
-            theTables = chains.map((s, i) =>
-                <table className="part-table collapsed" key={i.toString()}>
-                    <tbody>
-                        <tr>
-                            <td className="firstcol">{translate.t("Item")}</td>
-                            <td>{s.ChainName}</td>
-                        </tr>
-                        <tr>
-                            <td className="firstcol">{translate.t("Pitch")}</td>
-                            <td>{s.Pitch}</td>
-                        </tr>
-                        <tr>
-                            <td className="firstcol">{translate.t("Length")}</td>
-                            <td>{s.Length}</td>
-                        </tr>
-                        <tr>
-                            <td className="firstcol">{translate.t("Description")}</td>
-                            <td>{s.Description}</td>
-                        </tr>
-                        <tr>
-                            <td className="firstcol">{translate.t("OuterColor")}</td>
-                            <td>{s.OuterColor}</td>
-                        </tr>                   
-                    </tbody>
-                </table>,
+            theTables = chains.map((s, i) => {
+                let chainImage = "https://service.afam.com/webshop/images/chains/" + s.ColorName + ".jpg";
+                return (
+                    <table className="part-table collapsed" key={i.toString()}>
+                        <tbody>
+                            <tr>
+                                <td className="firstcol">{translate.t("Item")}</td>
+                                <td>{s.ChainName}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("Pitch")}</td>
+                                <td>{s.Pitch}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("Length")}</td>
+                                <td>{s.Length}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("Description")}</td>
+                                <td>{s.Description}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("OuterColor")}</td>
+                                <td>{s.OuterColor}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("Image")}</td>
+                                <td data-label="Image" className="cell-center">
+                                    <a className="image-popup-fit-width" href="#">
+                                        <img
+                                            src={chainImage}
+                                            style={{ borderWidth: "0px", width: "4em" }}
+                                            onError={(e) => this.ImageError(e.currentTarget)}
+                                            onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
+                                        />
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>)
+            }
             );
         }
 

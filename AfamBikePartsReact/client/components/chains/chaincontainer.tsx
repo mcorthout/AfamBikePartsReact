@@ -2,6 +2,7 @@ import * as React from "react";
 import { observer } from "mobx-react";
 import { ChainList } from "./chainlist";
 import { ChainStore } from "../../stores";
+import { ImageModal } from "../common";
 
 interface IChainContainerProps {
     store: ChainStore;
@@ -22,7 +23,16 @@ export class ChainContainer extends React.Component<IChainContainerProps, {}> {
                 <div>
                     <ChainList
                         store={this.props.store}
-                    />                   
+                    />
+                    <ImageModal
+                        imageUrl={this.props.store.ChainImageUrl}
+                        show={this.props.store.ChainImageModalVisible}
+                        onHide={() => { this.props.store.HideChainImage(); }}
+                        modalId="ChainImageModal"
+                        imageId="ChainImageModalImage"
+                        title={this.props.store.ChainImageTitle}
+                        closeText={this.props.store.polyglot.t("Close")}
+                    />
                 </div>
             );
         } else {

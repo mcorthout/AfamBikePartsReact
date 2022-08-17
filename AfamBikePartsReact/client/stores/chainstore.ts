@@ -1,7 +1,7 @@
 ﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
 import { /*BikeReverseModel,*/ ChainInfoModel } from "../models";
-import { PartService/*, ReverseService*/ } from "../services";
+import { PartService, InfoService/*, ReverseService*/ } from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
@@ -11,46 +11,46 @@ export class ChainStore extends PartStore {
     @observable
     public chains: ChainInfoModel[];
 
-    /////* Image modal */
-    ////@observable
-    ////public FilterImageTitle: string;
+    // A modal to display an image of the chain
+    @observable
+    public ChainImageTitle: string;
 
-    ////@observable
-    ////public FilterImageModalVisible: boolean;
+    @observable
+    public ChainImageModalVisible: boolean;
 
-    ////@observable
-    ////public FilterImageUrl: string;
+    @observable
+    public ChainImageUrl: string;
 
-    ////public HideFilterImage(): void {
-    ////    document.body.classList.remove("modal-showing");
-    ////    this.FilterImageModalVisible = false;
-    ////    this.FilterImageTitle = "";
-    ////}
+    @action
+    public HideChainImage(): void {
+        document.body.classList.remove("modal-showing");
+        this.ChainImageTitle = "";
+        this.ChainImageModalVisible = false;
+    }
 
-    ////public ShowFilterImage(filter: FilterModel, url: string): void {
-    ////    this.FilterImageTitle = filter.Part;
-    ////    this.FilterImageUrl = url;
-    ////    this.FilterImageModalVisible = true;
-    ////}
+    @action
+    public ShowChainImage(chain: ChainInfoModel, url: string): void {
+        this.ChainImageTitle = chain.ChainName;
+        this.ChainImageUrl = url;
+        this.ChainImageModalVisible = true;
+    }
 
-    /////* Drawing modal */
-    ////@observable
-    ////public FilterDrawingModalVisible: boolean;
+    // A modal to display chain technical information
+    @observable
+    public ChainInfoModalVisible: boolean;
 
-    ////@observable
-    ////public FilterDrawingUrl: string;
+    @observable
+    public ChainInfo: ChainInfoModel | undefined;
 
-    ////public HideFilterDrawing(): void {
-    ////    document.body.classList.remove("modal-showing");
-    ////    this.FilterDrawingModalVisible = false;
-    ////    this.FilterImageTitle = "";
-    ////}
+    @action
+    public HideChainInfo(): void {
+        document.body.classList.remove("modal-showing");
+        this.ChainInfoModalVisible = false;
+    }
 
-    ////public ShowFilterDrawing(filter: FilterModel, url: string): void {
-    ////    this.FilterImageTitle = filter.Part;
-    ////    this.FilterDrawingUrl = url;
-    ////    this.FilterDrawingModalVisible = true;
-    ////}
+    public ShowChainInfo(chain: ChainInfoModel): void {
+        InfoService.GetChainInfo(chain.ChainName, this.appStore.language, this.loadChainInfo);
+    }
 
     /////* Reverse applications */
     ////@observable
@@ -92,17 +92,16 @@ export class ChainStore extends PartStore {
         this.bikeId = 0;
         this.polyglot = this.appStore.polyglot;
 
-        //this.FilterImageTitle = "";
-        //this.FilterImageModalVisible = false;
-        //this.FilterImageUrl = "";
-        //this.FilterDrawingModalVisible = false;
-        //this.FilterDrawingUrl = "";
+        this.ChainImageTitle = "";
+        this.ChainImageModalVisible = false;
+        this.ChainImageUrl = "";
 
         //this.FilterReverseModalVisible = false;
         //this.ReversedBikes = [];
         //this.FilterReverseTitle = "";
 
         this.updateChains = this.updateChains.bind(this);
+        this.loadChainInfo = this.loadChainInfo.bind(this);
         //this.updateReverseBikes = this.updateReverseBikes.bind(this);
     }
 
@@ -137,5 +136,15 @@ export class ChainStore extends PartStore {
     @action
     private updateChains(newChains: ChainInfoModel[]): void {
         this.chains = newChains;
+    }
+
+    @action
+    public loadChainInfo(info: ChainInfoModel) {
+        if (info && info.PitchMm) {
+            this.ChainInfo = info;
+            this.ChainInfoModalVisible = true;
+        } else {
+            this.ChainInfoModalVisible = false;
+        }
     }
 }
