@@ -1,4 +1,5 @@
 ﻿export class ChainInfoModel {
+    Id: number;
     ChainName: string;
     Pitch: number;
     Brand: string;

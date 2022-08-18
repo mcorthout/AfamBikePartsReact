@@ -1,7 +1,7 @@
 ﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { /*BikeReverseModel,*/ ChainInfoModel } from "../models";
-import { PartService, InfoService/*, ReverseService*/ } from "../services";
+import { BikeReverseModel, ChainInfoModel } from "../models";
+import { PartService, InfoService, ReverseService} from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
@@ -52,34 +52,34 @@ export class ChainStore extends PartStore {
         InfoService.GetChainInfo(chain.ChainName, this.appStore.language, this.loadChainInfo);
     }
 
-    /////* Reverse applications */
-    ////@observable
-    ////public FilterReverseTitle: string;
+    /* Reverse applications */
+    @observable
+    public ChainReverseTitle: string;
 
-    ////@observable
-    ////public FilterReverseModalVisible: boolean;
+    @observable
+    public ChainReverseModalVisible: boolean;
 
-    ////@observable
-    ////public ReversedBikes: BikeReverseModel[];
+    @observable
+    public ReversedBikes: BikeReverseModel[];
 
-    ////public HideReversedBikes(): void {
-    ////    document.body.classList.remove("modal-showing");
-    ////    this.FilterReverseModalVisible = false;
-    ////    this.ReversedBikes = [];
-    ////    this.FilterReverseTitle = "";
-    ////}
+    public HideReversedBikes(): void {
+        document.body.classList.remove("modal-showing");
+        this.ChainReverseModalVisible = false;
+        this.ReversedBikes = [];
+        this.ChainReverseTitle = "";
+    }
 
-    ////public ShowReversedBikes(filter: FilterModel): void {
-    ////    this.ReversedBikes = [];
-    ////    this.FilterReverseTitle = filter.Part;
-    ////    ReverseService.GetBikes(filter.PartId, this.updateReverseBikes);
-    ////}
+    public ShowReversedBikes(chain: ChainInfoModel): void {
+        this.ReversedBikes = [];
+        this.ChainReverseTitle = chain.ChainName;
+        ReverseService.GetBikes(chain.Id, this.updateReverseBikes);
+    }
 
-    ////@action
-    ////private updateReverseBikes(newBikes: BikeReverseModel[]): void {
-    ////    this.ReversedBikes = newBikes;
-    ////    this.FilterReverseModalVisible = true;
-    ////}
+    @action
+    private updateReverseBikes(newBikes: BikeReverseModel[]): void {
+        this.ReversedBikes = newBikes;
+        this.ChainReverseModalVisible = true;
+    }
 
     private bikeId: number;
 
@@ -99,16 +99,16 @@ export class ChainStore extends PartStore {
         this.ChainInfoModalVisible = false;
         this.ChainInfo = undefined;
 
-        //this.FilterReverseModalVisible = false;
-        //this.ReversedBikes = [];
-        //this.FilterReverseTitle = "";
+        this.ChainReverseModalVisible = false;
+        this.ReversedBikes = [];
+        this.ChainReverseTitle = "";
 
         this.updateChains = this.updateChains.bind(this);
 
         this.loadChainInfo = this.loadChainInfo.bind(this);
         this.HideChainInfo = this.HideChainInfo.bind(this);
 
-        //this.updateReverseBikes = this.updateReverseBikes.bind(this);
+        this.updateReverseBikes = this.updateReverseBikes.bind(this);
     }
 
     @computed

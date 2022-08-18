@@ -77,6 +77,14 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                     <td data-label="Length" className="cell-center">{s.Length}</td>
                     <td data-label="Description" className="cell-center">{s.Description}</td>
                     <td data-label="OuterColor" className="cell-center">{s.OuterColor}</td>
+                    <td data-label="Applications" className="cell-center">
+                        <a href="#">
+                            <img
+                                src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
+                            />
+                        </a>
+                    </td>
                     <td data-label="Image" className="cell-center">
                         <a className="image-popup-fit-width" href="#">
                             <img
@@ -112,6 +120,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             <th className="cell-center">{translate.t("Length")}</th>
                             <th className="cell-center">{translate.t("Description")}</th>
                             <th className="cell-center">{translate.t("OuterColor")}</th>
+                            <th className="cell-center">{translate.t("Applications")}</th>
                             <th className="cell-center">{translate.t("Image")}</th>
                             <th className="cell-center">Info</th>
                         </tr>
@@ -155,6 +164,17 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             <tr>
                                 <td className="firstcol">{translate.t("OuterColor")}</td>
                                 <td>{s.OuterColor}</td>
+                            </tr>
+                            <tr>
+                                <td className="firstcol">{translate.t("Applications")}</td>
+                                <td data-label="Applications" className="cell-center">
+                                    <a href="#">
+                                        <img
+                                            src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                            onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
+                                        />
+                                    </a>
+                                </td>
                             </tr>
                             <tr>
                                 <td className="firstcol">{translate.t("Image")}</td>

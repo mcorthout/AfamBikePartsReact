@@ -2,7 +2,7 @@ import * as React from "react";
 import { observer } from "mobx-react";
 import { ChainList } from "./chainlist";
 import { ChainStore } from "../../stores";
-import { ImageModal } from "../common";
+import { ImageModal, ReverseModal } from "../common";
 import { ChainInfoModal } from "../kits/chaininfomodal";
 
 interface IChainContainerProps {
@@ -41,6 +41,13 @@ export class ChainContainer extends React.Component<IChainContainerProps, {}> {
                         onHide={this.props.store.HideChainInfo}
                     >
                     </ChainInfoModal>
+                    <ReverseModal
+                        store={this.props.store}
+                        onHide={() => { this.props.store.HideReversedBikes(); }}
+                        show={this.props.store.ChainReverseModalVisible}
+                        title={this.props.store.ChainReverseTitle}
+                    >
+                    </ReverseModal>
                 </div>
             );
         } else {
