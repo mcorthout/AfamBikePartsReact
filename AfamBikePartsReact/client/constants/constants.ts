@@ -12,5 +12,5 @@
     RearSprockets = 1024
 };
 
-//export const ApplicationHost: string = "https://service.afam.com/api/applications";
-export const ApplicationHost: string = "http://localhost:58224/applications";
+export const ApplicationHost: string = "https://service.afam.com/api/applications";
+//export const ApplicationHost: string = "http://localhost:58224/applications";
