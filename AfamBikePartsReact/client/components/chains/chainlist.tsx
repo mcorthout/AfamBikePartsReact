@@ -89,7 +89,6 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                         <a className="image-popup-fit-width" href="#">
                             <img
                                 src={chainImage}
-                                style={{ borderWidth: "0px", width: "4em" }}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
                             />
@@ -182,7 +181,6 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                                     <a className="image-popup-fit-width" href="#">
                                         <img
                                             src={chainImage}
-                                            style={{ borderWidth: "0px", width: "4em" }}
                                             onError={(e) => this.ImageError(e.currentTarget)}
                                             onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
                                         />

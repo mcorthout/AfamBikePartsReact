@@ -566,3 +566,13 @@ button.close {
     text-decoration: underline;
 }
 
+/* Part list */
+
+.image-popup-fit-width {
+
+}
+
+    .image-popup-fit-width > img {
+        border-width: 0px;
+        width: 4em;
+    }

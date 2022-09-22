@@ -86,7 +86,6 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                         <a className="image-popup-fit-width" href="#">
                             <img
                                 src={s.Photo}
-                                style={{ borderWidth: "0px", width: "4em" }}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowFilterImage(s, s.Photo); e.preventDefault(); }}
                             />
@@ -96,7 +95,6 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                         <a className="image-popup-fit-width" href="#">
                             <img
                                 src={s.Drawing}
-                                style={{ borderWidth: "0px", width: "4em" }}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowFilterDrawing(s, s.Drawing); e.preventDefault(); }}
                             />
@@ -167,7 +165,6 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                                 <a className="image-popup-fit-width" href="#">
                                     <img
                                         src={s.Photo}
-                                        style={{ borderWidth: "0px", width: "4em" }}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowFilterImage(s, s.Photo); e.preventDefault(); }}
                                     />
@@ -180,7 +177,6 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                                 <a className="image-popup-fit-width" href="#">
                                     <img
                                         src={s.Drawing}
-                                        style={{ borderWidth: "0px", width: "4em" }}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowFilterDrawing(s, s.Drawing); e.preventDefault() }}
                                     />

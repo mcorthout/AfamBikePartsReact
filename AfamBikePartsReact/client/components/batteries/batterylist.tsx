@@ -93,7 +93,6 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                         <a className="image-popup-fit-width" href="#">
                             <img
                                 src={s.Photo}
-                                style={{ borderWidth: "0px", width: "4em" }}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowBatteryImage(s); e.preventDefault(); }}
                             />
@@ -193,7 +192,6 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                                 <a className="image-popup-fit-width" href="#">
                                     <img
                                         src={s.Photo}
-                                        style={{ borderWidth: "0px", width: "4em" }}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowBatteryImage(s); e.preventDefault(); }}
                                     />
