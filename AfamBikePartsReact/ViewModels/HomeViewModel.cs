@@ -14,16 +14,16 @@ namespace AfamBikePartsReact.ViewModels
     }
 
     public class MainGroup
-    {        
+    {
         public string Name { get; set; }
         public string Value { get; set; }
         public bool Selected { get; set; }
-        public ProductGroup[] ProductGroups { get; set; } 
+        public ProductGroup[] ProductGroups { get; set; }
     }
-   
+
 
     public class HomeViewModel
-    {       
+    {
         public MainGroup[] Groups { get; set; }
 
         public string SelectedMainGroup { get; set; }
@@ -73,6 +73,15 @@ namespace AfamBikePartsReact.ViewModels
                     ProductGroups = new ProductGroup[] {
                          new ProductGroup{Name="AFAM chains", Value="Chains", Selected=true}
                     }
+                  },
+                  new MainGroup {
+                    Name = "Sprockets",
+                    Value = "sprockets",
+                    Selected = false,
+                    ProductGroups = new ProductGroup[] {
+                         new ProductGroup{Name="Front sprockets", Value="FrontSprockets", Selected=true},
+                         new ProductGroup{Name="Rear sprockets", Value="RearSprockets", Selected=false}
+                  }
                 }
             };
 

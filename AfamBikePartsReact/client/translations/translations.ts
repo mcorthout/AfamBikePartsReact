@@ -77,6 +77,10 @@
         Close: "Close",
         ApplicableChains: "Applicable chains",
         Pitch: "Pitch",
+        ApplicableSprockets: "Applicable sprockets",
+        Material: "Material",
+        ApplicableFrontSprockets: "Applicable front sprockets",
+        ApplicableRearSprockets: "Applicable rear sprockets"
     },
     nl: {
         BikeSelect: "Kies een motorfiets",
@@ -156,6 +160,10 @@
         Close: "Sluiten",
         ApplicableChains: "Geschikte kettingen",
         Pitch: "Stap",
+        ApplicableSprockets: "Geschikte kettingwielen",
+        Material: "Materiaal",
+        ApplicableFrontSprockets: "Geschikte kettingwielen vooraan",
+        ApplicableRearSprockets: "Geschikte kettingwielen achteraan"
     },
     de: {
         BikeSelect: "Motorradwahl",
@@ -235,6 +243,10 @@
         Close: "Schließen",
         ApplicableChains: "Geeignete Ketten",
         Pitch: "Teilung",
+        ApplicableSprockets: "Geeignete Kettenräder und -ritzel",
+        Material: "Werkstoff",
+        ApplicableFrontSprockets: "Geeignete Kettenritzel",
+        ApplicableRearSprockets: "Geeignete Kettenräder"
     },
     fr: {
         BikeSelect: "Choisissez une moto",
@@ -314,5 +326,9 @@
         Close: "Fermer",
         ApplicableChains: "Chaînes possibles",
         Pitch: "Pas",
+        ApplicableSprockets: "Pignons et couronnes possibles",
+        Material: "Matière",
+        ApplicableFrontSprockets: "Pignons possibles",
+        ApplicableRearSprockets: "Couronnes possibles"
     },
 };

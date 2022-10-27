@@ -17,6 +17,7 @@
     <None Remove="client\models\chaininfomodel.ts" />
     <None Remove="client\models\kitchainmodel.ts" />
     <None Remove="client\models\kitstate.ts" />
+    <None Remove="client\models\sprocketlistmodel.ts" />
     <None Remove="client\models\sprocketmodel.ts" />
     <None Remove="client\react-responsive-modal.d.ts" />
     <None Remove="client\stores\partstore.ts" />
@@ -47,6 +48,7 @@
     <TypeScriptCompile Include="client\models\chaininfomodel.ts" />
     <TypeScriptCompile Include="client\models\kitchainmodel.ts" />
     <TypeScriptCompile Include="client\models\kitstate.ts" />
+    <TypeScriptCompile Include="client\models\sprocketlistmodel.ts" />
     <TypeScriptCompile Include="client\models\sprocketmodel.ts" />
     <TypeScriptCompile Include="client\stores\partstore.ts" />
     <TypeScriptCompile Include="client\stores\__tests__\appstore.spec.ts" />

@@ -444,6 +444,12 @@
     width: 4rem
 }
 
+/* Sprocket image modal */
+
+#SprocketModalImage {
+    max-width: 600px;
+}
+
 
 /* Modals */
 

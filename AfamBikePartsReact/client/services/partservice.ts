@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BatteryModel, ChainInfoModel, FilterModel, KitModel } from "../models";
+import { BatteryModel, ChainInfoModel, FilterModel, KitModel, SprocketListModel } from "../models";
 import { ApplicationHost } from "../constants";
 
 export class PartService {
@@ -18,6 +18,10 @@ export class PartService {
 
     public static GetChains(partBrands: number, bikeId: number, language: string = "en", done: (parts: ChainInfoModel[]) => void): void {
         PartService.Get<ChainInfoModel[]>(`${ApplicationHost}/${partBrands}/bike/${bikeId}/${language}`, done, []);
+    }
+
+    public static GetSprockets(partBrands: number, bikeId: number, language: string = "en", done: (parts: SprocketListModel[]) => void): void {
+        PartService.Get<SprocketListModel[]>(`${ApplicationHost}/${partBrands}/bike/${bikeId}/${language}`, done, []);
     }
 
     private static Get<T>(URL: string, done: (values: T) => void, errorValue: T): void {

@@ -7,3 +7,4 @@ export { BatteryModel } from "./batterymodel";
 export { FilterModel } from "./filtermodel";
 export { BikeReverseModel } from "./bikereversemodel";
 export { ChainInfoModel } from "./chaininfomodel";
+export { SprocketListModel } from "./sprocketlistmodel";
