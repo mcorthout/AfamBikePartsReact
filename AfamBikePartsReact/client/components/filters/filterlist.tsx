@@ -1,6 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { FilterStore } from "../../stores";
+import { CommonImageBase } from "../../constants";
 
 interface IFilterListProps {
     store: FilterStore;
@@ -77,7 +78,7 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                     <td data-label="Applications" className="cell-center">
                         <a href="#">
                             <img
-                                src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                src={CommonImageBase + "bike.png"}
                                 onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                             />
                         </a>
@@ -153,7 +154,7 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                             <td className="cell-center">
                                 <a href="#">
                                     <img
-                                        src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                        src={CommonImageBase + "bike.png"}
                                         onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                                     />
                                 </a>

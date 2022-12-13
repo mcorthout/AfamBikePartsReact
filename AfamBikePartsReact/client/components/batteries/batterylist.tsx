@@ -1,6 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { BatteryStore } from "../../stores";
+import { CommonImageBase } from "../../constants";
 
 interface IBatteryListProps {
     store: BatteryStore;
@@ -84,7 +85,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                         <a href="#">
                             <img
                                 className="info-image"
-                                src="https://afam.com/wp-content/themes/netAfam/afamparts/info.png"
+                                src={CommonImageBase + "info.png"}
                                 onClick={(e) => { this.props.store.ShowBatteryInfo(s); e.preventDefault(); }}
                             />
                         </a>
@@ -180,7 +181,7 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                             <td data-label="Info" className="cell-center">
                                 <a href="#">
                                     <img
-                                        src="https://afam.com/wp-content/themes/netAfam/afamparts/info.png"
+                                        src={CommonImageBase + "info.png"}
                                         onClick={(e) => { this.props.store.ShowBatteryInfo(s); e.preventDefault(); }}
                                     />
                                 </a>

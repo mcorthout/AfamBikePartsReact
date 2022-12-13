@@ -1,6 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { ChainStore } from "../../stores";
+import { CommonImageBase } from "../../constants";
 
 interface IChainListProps {
     store: ChainStore;
@@ -80,7 +81,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                     <td data-label="Applications" className="cell-center">
                         <a href="#">
                             <img
-                                src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                src={CommonImageBase + "bike.png"}
                                 onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                             />
                         </a>
@@ -98,7 +99,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                         <a href="#">
                             <img
                                 className="info-image"
-                                src="https://afam.com/wp-content/themes/netAfam/afamparts/info.png"
+                                src={CommonImageBase + "info.png"}
                                 onClick={(e) => { this.props.store.ShowChainInfo(s); e.preventDefault(); }}
                             />
                         </a>
@@ -169,7 +170,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                                 <td data-label="Applications" className="cell-center">
                                     <a href="#">
                                         <img
-                                            src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                            src={CommonImageBase + "bike.png"}
                                             onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                                         />
                                     </a>

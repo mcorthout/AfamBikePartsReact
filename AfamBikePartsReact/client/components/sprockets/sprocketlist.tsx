@@ -1,6 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { SprocketStore } from "../../stores";
+import { CommonImageBase } from "../../constants";
 
 interface ISprocketListProps {
     store: SprocketStore;
@@ -83,7 +84,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
                             <td data-label="Applications" className="cell-center">
                                 <a href="#">
                                     <img
-                                        src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                src={CommonImageBase + "bike.png"}
                                         onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                                     />
                                 </a>
@@ -178,7 +179,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
                                 <td data-label="Applications" className="cell-center">
                                     <a href="#">
                                         <img
-                                            src="https://afam.com/wp-content/themes/netAfam/afamparts/bike.png"
+                                            src={CommonImageBase + "bike.png"}
                                             onClick={(e) => { this.props.store.ShowReversedBikes(s); e.preventDefault(); }}
                                         />
                                     </a>

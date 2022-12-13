@@ -2,6 +2,7 @@
 import { observer } from "mobx-react";
 import { ChainInfoModel } from "../../models";
 import Polyglot = require("node-polyglot");
+import { CommonImageBase } from "../../constants";
 
 interface IChainInfoModalProps {
     polyglot: Polyglot;
@@ -65,7 +66,7 @@ interface IChainInfoModalProps {
                                 </div>
                                 <div className="chain-info-right">
                                     <div>
-                                        <img src="https://afam.com/wordpress/wp-content/themes/netAfam/afamparts/chain_dim.png" />
+                                        <img src={CommonImageBase + "chain_dim.png"} />
                                     </div>
                                 </div>
                             </div>
