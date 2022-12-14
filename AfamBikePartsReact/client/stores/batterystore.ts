@@ -117,8 +117,9 @@ export class BatteryStore extends PartStore {
     // Process the retrieved list of batteries
     @action
     private updateBatteries(newBatteries: BatteryModel[]): void {
-        for (const battery of newBatteries) {
-            battery.LayoutDrawing = ProductImageBase + "batteries/layout/" + battery.LayoutDrawing;
+        for (const battery of newBatteries) {            
+            battery.PolarityDrawing = ProductImageBase + "batteries/polarity/polarity_location_" + battery.PolarityLocation + ".png";
+            battery.ExhaustDrawing = ProductImageBase + "/batteries/exhaust/exhaust_" + battery.ExhaustPosition + ".png";
             battery.TerminalTop = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "t.png";
             battery.TerminalFront = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "f.png";
             battery.TerminalSide = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "s.png";

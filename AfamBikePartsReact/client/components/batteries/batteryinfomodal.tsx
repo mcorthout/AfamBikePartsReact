@@ -18,6 +18,24 @@ interface IBatteryInfoModalProps {
 
             document.body.classList.add("modal-showing");
 
+            let polarity = null;
+            if (battery.PolarityLocation != "") {
+                polarity =
+                    <div className="battery-info-drawing-row">
+                        <div className="battery-info-cell-label cell-right">{poly.t("PolarityLocation")}</div>
+                        <img src={battery.PolarityDrawing} className="battery-layout-image" />
+                    </div>
+            }
+
+            let exhaust = null;
+            if (battery.ExhaustPosition != "") {
+                exhaust =
+                    <div className="battery-info-drawing-row">
+                        <div className="battery-info-cell-label cell-right">{poly.t("ExhaustPosition")}</div>
+                        <img src={battery.ExhaustDrawing} className="battery-layout-image" />
+                    </div>
+            }
+
             return (
 
                 <div className="modal_background">
@@ -109,10 +127,8 @@ interface IBatteryInfoModalProps {
                                     </div>
                                 </div>
                                 <div className="battery-info-right">
-                                    <div className="battery-info-drawing-row">
-                                        <div className="battery-info-cell-label cell-right">{poly.t("LayoutDrawing")}</div>
-                                        <img src={battery.LayoutDrawing} className="battery-layout-image" />
-                                    </div>
+                                    {polarity}
+                                    {exhaust}
                                     <div className="battery-info-drawing-row">
                                         <div className="battery-info-cell-label cell-right">{poly.t("TerminalTop")}</div>
                                         <img src={battery.TerminalTop} className="battery-terminal-image" />

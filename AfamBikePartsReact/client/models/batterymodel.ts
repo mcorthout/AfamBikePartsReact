@@ -24,4 +24,8 @@
     public TerminalTop: string;
     public TerminalFront: string;
     public TerminalSide: string;
+    public ExhaustPosition: string;
+    public PolarityLocation: string;
+    public ExhaustDrawing: string;
+    public PolarityDrawing: string;
 }

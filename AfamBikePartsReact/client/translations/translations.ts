@@ -80,7 +80,9 @@
         ApplicableSprockets: "Applicable sprockets",
         Material: "Material",
         ApplicableFrontSprockets: "Applicable front sprockets",
-        ApplicableRearSprockets: "Applicable rear sprockets"
+        ApplicableRearSprockets: "Applicable rear sprockets",
+        PolarityLocation: "Polarity",
+        ExhaustPosition: "Exhaust",
     },
     nl: {
         BikeSelect: "Kies een motorfiets",
@@ -163,7 +165,9 @@
         ApplicableSprockets: "Geschikte kettingwielen",
         Material: "Materiaal",
         ApplicableFrontSprockets: "Geschikte kettingwielen vooraan",
-        ApplicableRearSprockets: "Geschikte kettingwielen achteraan"
+        ApplicableRearSprockets: "Geschikte kettingwielen achteraan",
+        PolarityLocation: "Polariteit",
+        ExhaustPosition: "Ontluchting",
     },
     de: {
         BikeSelect: "Motorradwahl",
@@ -246,7 +250,9 @@
         ApplicableSprockets: "Geeignete Kettenräder und -ritzel",
         Material: "Werkstoff",
         ApplicableFrontSprockets: "Geeignete Kettenritzel",
-        ApplicableRearSprockets: "Geeignete Kettenräder"
+        ApplicableRearSprockets: "Geeignete Kettenräder",
+        PolarityLocation: "Polarität",
+        ExhaustPosition: "Entlüftungsöffnung",
     },
     fr: {
         BikeSelect: "Choisissez une moto",
@@ -329,6 +335,8 @@
         ApplicableSprockets: "Pignons et couronnes possibles",
         Material: "Matière",
         ApplicableFrontSprockets: "Pignons possibles",
-        ApplicableRearSprockets: "Couronnes possibles"
+        ApplicableRearSprockets: "Couronnes possibles",
+        PolarityLocation: "Polarité",
+        ExhaustPosition: "Ouverture de ventilation",
     },
 };
