@@ -14,4 +14,5 @@
 
 export const ApplicationHost: string = "https://service.afam.com/api/applications";
 export const CommonImageBase: string = "https://service.afam.com/afamgroup/images/";
+export const ProductImageBase: string = "https://service.afam.com/webshop/images/";
 //export const ApplicationHost: string = "http://localhost:58224/applications";

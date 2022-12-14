@@ -2,6 +2,7 @@ import * as React from "react";
 import { observer } from "mobx-react";
 import { KitStore } from "../../stores";
 import { KitModel, SprocketModel } from "../../models";
+import { ProductImageBase } from "../../constants";
 
 interface ISprocketProps {
     kit: KitModel;
@@ -47,7 +48,7 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
                 value={s.SprocketName}>{s.Teeth}
             </option>);
 
-        const imageURL = "https://service.afam.com/webshop/images/sprockets/3d/vignettes/" + selectedSprocket.SprocketName + ".jpg";
+        const imageURL = ProductImageBase + "sprockets/3d/vignettes/" + selectedSprocket.SprocketName + ".jpg";
 
         return (
             <div className="kitpart-component-cell">

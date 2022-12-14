@@ -4,6 +4,7 @@ import { BatteryModel, BikeReverseModel } from "../models";
 import { PartService, ReverseService } from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
+import { ProductImageBase } from "../constants";
 
 export class BatteryStore extends PartStore {
     public polyglot: Polyglot;
@@ -117,10 +118,10 @@ export class BatteryStore extends PartStore {
     @action
     private updateBatteries(newBatteries: BatteryModel[]): void {
         for (const battery of newBatteries) {
-            battery.LayoutDrawing = "https://service.afam.com/webshop/images/batteries/layout/" + battery.LayoutDrawing;
-            battery.TerminalTop = "https://service.afam.com/webshop/images/batteries/terminal/t" + battery.TerminalType + "t.png";
-            battery.TerminalFront = "https://service.afam.com/webshop/images/batteries/terminal/t" + battery.TerminalType + "f.png";
-            battery.TerminalSide = "https://service.afam.com/webshop/images/batteries/terminal/t" + battery.TerminalType + "s.png";
+            battery.LayoutDrawing = ProductImageBase + "batteries/layout/" + battery.LayoutDrawing;
+            battery.TerminalTop = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "t.png";
+            battery.TerminalFront = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "f.png";
+            battery.TerminalSide = ProductImageBase + "batteries/terminal/t" + battery.TerminalType + "s.png";
         }
 
         this.batteries = newBatteries;

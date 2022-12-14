@@ -1,2 +1,2 @@
-export { PartBrands, ApplicationHost, CommonImageBase } from "./constants";
+export { PartBrands, ApplicationHost, CommonImageBase, ProductImageBase } from "./constants";
 

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { observer } from "mobx-react";
 import { ChainStore } from "../../stores";
-import { CommonImageBase } from "../../constants";
+import { CommonImageBase, ProductImageBase } from "../../constants";
 
 interface IChainListProps {
     store: ChainStore;
@@ -71,7 +71,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
 
         if (chains) {
             theParts = chains.map((s, i) => {
-                let chainImage = "https://service.afam.com/webshop/images/chains/" + s.ColorName + ".jpg";
+                let chainImage = ProductImageBase + "chains/" + s.ColorName + ".jpg";
                 return (<tr key={i.toString()} >
                     <td data-label="Item" className="cell-center">{s.ChainName}</td>
                     <td data-label="Pitch" className="cell-center">{s.Pitch}</td>
@@ -141,7 +141,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
 
         if (chains) {
             theTables = chains.map((s, i) => {
-                let chainImage = "https://service.afam.com/webshop/images/chains/" + s.ColorName + ".jpg";
+                let chainImage = ProductImageBase + "chains/" + s.ColorName + ".jpg";
                 return (
                     <table className="part-table collapsed" key={i.toString()}>
                         <tbody>

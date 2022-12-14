@@ -2,6 +2,7 @@
 import { observer } from "mobx-react";
 import { KitStore } from "../../stores";
 import { KitChainModel, KitModel } from "../../models";
+import { ProductImageBase } from "../../constants";
 
 interface IChainProps {
     kit: KitModel;
@@ -82,7 +83,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
                 </div>;
         }
 
-        const imageURL = "https://service.afam.com/webshop/images/chains/" + selectedChain.ChainBaseName + ".jpg";
+        const imageURL = ProductImageBase + "chains/" + selectedChain.ChainBaseName + ".jpg";
 
         return (
             <div className="kitpart-component-cell">
