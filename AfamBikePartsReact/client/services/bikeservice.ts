@@ -30,7 +30,7 @@ export class BikeService {
             .then((response) => {
                 done(response.data);
             })
-            .catch((error) => done(errorValue));
+            .catch(() => done(errorValue));
     }
 
 }

@@ -1,10 +1,10 @@
 ﻿import * as React from "react";
 import { observer } from "mobx-react";
 import ReactPaginate from "react-paginate";
-import { PartStore } from "../../stores";
+import { KitStore } from "../../stores";
 
 interface IReverseModalProps {
-    store: PartStore;
+    store: KitStore;
     show: boolean;
     onHide: () => void;
     title: string;
@@ -28,7 +28,7 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
         this.updatePage = this.updatePage.bind(this);
     }
 
-    private updatePage(data: any): void {
+    private updatePage(data: {selected: number}): void {
         this.setState({
             selectedPage: data.selected,
         });

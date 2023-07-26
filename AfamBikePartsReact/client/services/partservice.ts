@@ -22,7 +22,7 @@ export class PartService {
             .then((response) => {
                 done(response.data);
             })
-            .catch((error) => done(errorValue));
+            .catch(() => done(errorValue));
     }
 
 }

@@ -1,13 +1,15 @@
 ﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
-import { ChainInfoModel, KitChainModel, KitModel, KitState, SprocketModel } from "../models";
+import { BikeReverseModel, ChainInfoModel, KitChainModel, KitModel, KitState, SprocketModel } from "../models";
 import { PartService } from "../services";
 import { InfoService } from "../services/infoservice";
 import { AppStore } from "./appstore";
-import { PartStore } from "./partstore";
 
-export class KitStore extends PartStore {
+export class KitStore {
+
     public polyglot: Polyglot;
+
+    public ReversedBikes: BikeReverseModel[];
 
     // The kits managed by this store
     @observable
@@ -82,8 +84,6 @@ export class KitStore extends PartStore {
     private bikeId: number;
 
     constructor(public appStore: AppStore) {
-        super();
-
         makeObservable(this);
 
         this.kits = [];

@@ -1,16 +1,12 @@
 ﻿import * as Polyglot from "node-polyglot";
 import { Translations } from "../translations";
 import { BikeStore } from "./bikestore";
-import { PartStore } from "./partstore";
 import { KitStore } from "./kitstore";
-import { PartBrands } from "../constants";
-import { ChainStore } from "./chainstore";
-import { SprocketStore } from "./sprocketstore";
 
 export class AppStore {
     public polyglot: Polyglot;
     public bikeStore: BikeStore;
-    public partStore: PartStore;
+    public kitStore: KitStore;
 
     private bikeId: number;
 
@@ -31,20 +27,7 @@ export class AppStore {
         this.bikeStore = new BikeStore(this);
 
         // Create the parts store
-        /* tslint:disable:no-bitwise */
-        if ((parts & PartBrands.AFAM) !== 0) {
-            this.partStore = new KitStore(this);
-        }
-        else if ((parts & PartBrands.Chains) !== 0) {
-            this.partStore = new ChainStore(this);
-        }
-        else if ((parts & PartBrands.FrontSprockets) !== 0 || (parts & PartBrands.RearSprockets) !== 0) {
-            this.partStore = new SprocketStore(this);
-        }
-        else {
-            this.partStore = new PartStore();
-        }
-        /* tslint:enable:no-bitwise */
+        this.kitStore = new KitStore(this);
     }
 
     public get BikeId(): number {
@@ -54,8 +37,8 @@ export class AppStore {
     public set BikeId(value: number) {
         this.bikeId = value;
 
-        if (this.partStore) {
-            this.partStore.BikeId = this.bikeId;
+        if (this.kitStore) {
+            this.kitStore.BikeId = this.bikeId;
         }
     }
 }

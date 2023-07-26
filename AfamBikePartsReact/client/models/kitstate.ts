@@ -1,4 +1,4 @@
-﻿import { KitChainModel, DefaultKitChain } from "./kitchainmodel";
+﻿import { DefaultKitChain, KitChainModel } from "./kitchainmodel";
 import { DefaultSprocket, SprocketModel } from "./sprocketmodel";
 
 export const DefaultKitState: KitState = {

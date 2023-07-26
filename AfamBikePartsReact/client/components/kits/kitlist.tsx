@@ -60,8 +60,7 @@ export class KitList extends React.Component<IKitListProps, {}> {
                         info={this.props.store.ChainInfo}
                         show={this.props.store.ChainInfoModalVisible}
                         onHide={this.props.store.HideChainInfo}
-                    >
-                    </ChainInfoModal>
+                    />
                 </div>
             );
         }
