@@ -9,19 +9,19 @@ export class BikeService {
     }
 
     public static GetCCs(parts: number, bike: BikeModel, done: (ccs: string[]) => void): void {
-        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}/${bike.selectedBrand}`, done, []);
     }
 
     public static GetModels(parts: number, bike: BikeModel, done: (models: string[]) => void): void {
-        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}/${bike.selectedBrand}/${bike.selectedCc}`, done, []);
     }
 
     public static GetYears(parts: number, bike: BikeModel, done: (years: string[]) => void): void {
-        BikeService.Get<string[]>(`${ApplicationHost}/${parts}?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}`, done, []);
+        BikeService.Get<string[]>(`${ApplicationHost}/${parts}/${bike.selectedBrand}/${bike.selectedCc}/${bike.selectedModel}`, done, []);
     }
 
     public static GetBikes(parts: number, bike: BikeModel, language: string = "en", done: (bikes: number[]) => void): void {
-        BikeService.Get<number[]>(`${ApplicationHost}/${parts}/bikes?brand=${bike.selectedBrand}&cc=${bike.selectedCc}&model=${bike.selectedModel}&year=${bike.selectedYear}&language=${language}`, done, []);
+        BikeService.Get<number[]>(`${ApplicationHost}/${parts}/bikes/${bike.selectedBrand}/${bike.selectedCc}/${bike.selectedModel}/${bike.selectedYear}/${language}`, done, []);
     }
 
     private static Get<T>(URL: string, done: (values: T) => void, errorValue: T): void {

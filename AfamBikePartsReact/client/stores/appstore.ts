@@ -3,8 +3,6 @@ import { Translations } from "../translations";
 import { BikeStore } from "./bikestore";
 import { PartStore } from "./partstore";
 import { KitStore } from "./kitstore";
-import { BatteryStore } from "./batterystore";
-import { FilterStore } from "./filterstore";
 import { PartBrands } from "../constants";
 import { ChainStore } from "./chainstore";
 import { SprocketStore } from "./sprocketstore";
@@ -34,16 +32,8 @@ export class AppStore {
 
         // Create the parts store
         /* tslint:disable:no-bitwise */
-        if (((parts & PartBrands.AFAM) !== 0) ||
-            ((parts & PartBrands.DC) !== 0) ||
-            ((parts & PartBrands.Threed) !== 0)) {
+        if ((parts & PartBrands.AFAM) !== 0) {
             this.partStore = new KitStore(this);
-        }
-        else if (((parts & PartBrands.Shido) !== 0) || ((parts & PartBrands.Nitro) !== 0)) {
-            this.partStore = new BatteryStore(this);
-        }
-        else if (((parts & PartBrands.Ison) !== 0) || ((parts & PartBrands.MIW) !== 0)) {
-            this.partStore = new FilterStore(this);
         }
         else if ((parts & PartBrands.Chains) !== 0) {
             this.partStore = new ChainStore(this);

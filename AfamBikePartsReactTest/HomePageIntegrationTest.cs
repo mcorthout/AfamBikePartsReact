@@ -51,15 +51,11 @@ namespace AfamBikePartsReactTest
         {
             // Arrange
             var fields = new Dictionary<string, string> {
-                { "SelectedMainGroup", "batteries" },
-                {"Groups[0].ProductGroups[0].Selected", "false" },
-                {"Groups[0].ProductGroups[1].Selected", "true" },
-                {"Groups[0].ProductGroups[2].Selected", "false" },
-                {"Groups[1].ProductGroups[0].Selected", "false" },
-                {"Groups[1].ProductGroups[1].Selected", "false" },
-                {"Groups[2].ProductGroups[0].Selected", "false" },
-                {"Groups[2].ProductGroups[1].Selected", "false" },
-                {"Groups[3].ProductGroups[0].Selected", "false" },
+                { "SelectedMainGroup", "kits" },
+                {"Groups[0].ProductGroups[0].Selected", "true" },
+                {"Groups[1].ProductGroups[0].Selected", "true" },
+                {"Groups[2].ProductGroups[0].Selected", "true" },
+                {"Groups[2].ProductGroups[1].Selected", "false" }
             };
 
             var content = new FormUrlEncodedContent(fields);
@@ -69,10 +65,11 @@ namespace AfamBikePartsReactTest
             var postContent = await HtmlHelpers.GetDocumentAsync(response);
 
             // Assert
-            Assert.True(HtmlHelpers.GetValueFromRadioGroup(postContent, "SelectedMainGroup") == "batteries");
-            Assert.False(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[0].ProductGroups[0].Selected"));
-            Assert.True(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[0].ProductGroups[1].Selected"));
-            Assert.False(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[0].ProductGroups[2].Selected"));
+            Assert.True(HtmlHelpers.GetValueFromRadioGroup(postContent, "SelectedMainGroup") == "kits");
+            Assert.True(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[0].ProductGroups[0].Selected"));
+            Assert.True(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[1].ProductGroups[0].Selected"));
+            Assert.True(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[2].ProductGroups[0].Selected"));
+            Assert.False(HtmlHelpers.IsCheckboxChecked(postContent, "Groups[2].ProductGroups[1].Selected"));
         }       
 
     }

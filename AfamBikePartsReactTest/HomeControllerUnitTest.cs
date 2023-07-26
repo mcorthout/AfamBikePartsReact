@@ -20,17 +20,14 @@ namespace AfamBikePartsReactTest
             var viewResult = Assert.IsType<ViewResult>(result);
             var resultModel = Assert.IsType<HomeViewModel>(viewResult.Model);
 
-            Assert.Equal(4, resultModel.Groups.Length);
-            Assert.Equal(3, resultModel.Groups[0].ProductGroups.Length);
+            Assert.Equal(3, resultModel.Groups.Length);
+            Assert.Single(resultModel.Groups[0].ProductGroups);
 
             Assert.Equal("Kits", resultModel.Groups[0].Name);
             Assert.True(resultModel.Groups[0].Selected);
-            Assert.Equal("Batteries", resultModel.Groups[1].Name);
-            Assert.False(resultModel.Groups[1].Selected);
 
             Assert.Equal("AFAM kits", resultModel.Groups[0].ProductGroups[0].Name);
-            Assert.True(resultModel.Groups[0].ProductGroups[0].Selected);
-            Assert.False(resultModel.Groups[0].ProductGroups[1].Selected);           
+            Assert.True(resultModel.Groups[0].ProductGroups[0].Selected);       
         }
 
         [Fact]

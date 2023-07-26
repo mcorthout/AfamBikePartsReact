@@ -188,6 +188,18 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                                     </a>
                                 </td>
                             </tr>
+                            <tr>
+                                <td className="firstcol">Info</td>
+                                <td data-label="Info" className="cell-center">
+                                    <a href="#">
+                                        <img
+                                            className="info-image"
+                                            src={CommonImageBase + "info.png"}
+                                            onClick={(e) => { this.props.store.ShowChainInfo(s); e.preventDefault(); }}
+                                        />
+                                    </a>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>)
             }
