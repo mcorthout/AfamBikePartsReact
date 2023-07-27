@@ -48,7 +48,7 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
                 value={s.SprocketName}>{s.Teeth}
             </option>);
 
-        const imageURL = ProductImageBase + "sprockets/3d/vignettes/" + selectedSprocket.SprocketName + ".jpg";
+        const imageURL = ProductImageBase + "sprockets/3d/vignettes/" + selectedSprocket.SprocketName.replace("AFAM-", "") + ".jpg";
 
         return (
             <div className="kitpart-component-cell">

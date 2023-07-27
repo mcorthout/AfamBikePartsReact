@@ -83,7 +83,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
                 </div>;
         }
 
-        const imageURL = ProductImageBase + "chains/" + selectedChain.ChainBaseName + ".jpg";
+        const imageURL = ProductImageBase + "chains/" + selectedChain.ChainBaseName.replace("AFAM-","") + ".jpg";
 
         return (
             <div className="kitpart-component-cell">
