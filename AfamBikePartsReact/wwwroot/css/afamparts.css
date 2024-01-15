@@ -408,7 +408,7 @@
 
 .sprocket-thumbnail {
     border-width: 0;
-    height: 4rem
+    width: 4rem;
 }
 
 /* Chain image thumbnail */
