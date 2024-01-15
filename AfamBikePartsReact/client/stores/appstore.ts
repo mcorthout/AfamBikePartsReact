@@ -8,6 +8,7 @@ import { FilterStore } from "./filterstore";
 import { PartBrands } from "../constants";
 import { ChainStore } from "./chainstore";
 import { SprocketStore } from "./sprocketstore";
+import { TransmissionStore } from "./transmissionstore";
 
 export class AppStore {
     public polyglot: Polyglot;
@@ -50,6 +51,9 @@ export class AppStore {
         }
         else if ((parts & PartBrands.FrontSprockets) !== 0 || (parts & PartBrands.RearSprockets) !== 0) {
             this.partStore = new SprocketStore(this);
+        }
+        else if ((parts & PartBrands.Transmission) != 0) {
+            this.partStore = new TransmissionStore(this);
         }
         else {
             this.partStore = new PartStore();

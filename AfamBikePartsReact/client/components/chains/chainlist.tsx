@@ -89,6 +89,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                     <td data-label="Image" className="cell-center">
                         <a className="image-popup-fit-width" href="#">
                             <img
+                                className="chain-thumbnail"
                                 src={chainImage}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
@@ -112,7 +113,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
         return (
             <div>
                 <h2>{translate.t("ApplicableChains")}</h2>
-                <table className="part-table">
+                <table className="part-table chain-table">
                     <thead>
                         <tr>
                             <th className="cell-center">{translate.t("Item")}</th>
@@ -143,7 +144,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
             theTables = chains.map((s, i) => {
                 let chainImage = ProductImageBase + "chains/" + s.ColorName + ".jpg";
                 return (
-                    <table className="part-table collapsed" key={i.toString()}>
+                    <table className="part-table chain-table collapsed" key={i.toString()}>
                         <tbody>
                             <tr>
                                 <td className="firstcol">{translate.t("Item")}</td>
@@ -181,6 +182,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                                 <td data-label="Image" className="cell-center">
                                     <a className="image-popup-fit-width" href="#">
                                         <img
+                                            className="chain-thumbnail"
                                             src={chainImage}
                                             onError={(e) => this.ImageError(e.currentTarget)}
                                             onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}

@@ -92,6 +92,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
                             <td data-label="Image" className="cell-center">
                                 <a className="image-popup-fit-width" href="#">
                                     <img
+                                        className="sprocket-thumbnail"
                                         src={sprocketImage}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowSprocketImage(s, sprocketImage); e.preventDefault(); }}
@@ -115,7 +116,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
         return (
             <div>
                 <h2>{title}</h2>
-                <table className="part-table">
+                <table className="part-table sprocket-table">
                     <thead>
                         <tr>
                             <th className="cell-center">{translate.t("Item")}</th>
@@ -148,7 +149,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
             theTables = sprockets.map((s, i) => {
                 let sprocketImage = s.Drawing;
                 return (
-                    <table className="part-table collapsed" key={i.toString()}>
+                    <table className="part-table sprocket-table collapsed" key={i.toString()}>
                         <tbody>
                             <tr>
                                 <td className="firstcol">{translate.t("Item")}</td>
@@ -190,6 +191,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
                                 <td data-label="Image" className="cell-center">
                                     <a className="image-popup-fit-width" href="#">
                                         <img
+                                            className="sprocket-thumbnail"
                                             src={sprocketImage}
                                             onError={(e) => this.ImageError(e.currentTarget)}
                                             onClick={(e) => { this.props.store.ShowSprocketImage(s, sprocketImage); e.preventDefault(); }}

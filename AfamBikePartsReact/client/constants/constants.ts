@@ -9,7 +9,8 @@
     MIW = 128,
     Chains = 256,
     FrontSprockets = 512,
-    RearSprockets = 1024
+    RearSprockets = 1024,
+    Transmission = 2048
 };
 
 export const ApplicationHost: string = "https://service.afam.com/api/applications";

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { observer } from "mobx-react";
-import { AppStore, BatteryStore, FilterStore, KitStore, ChainStore, SprocketStore } from "./stores";
+import { AppStore, BatteryStore, FilterStore, KitStore, ChainStore, SprocketStore, TransmissionStore } from "./stores";
 import { BikeSelect } from "./components/bikes";
 import { KitList } from "./components/kits";
 import { BatteryContainer } from "./components/batteries";
@@ -8,6 +8,7 @@ import { FilterContainer } from "./components/filters";
 import { ChainContainer } from "./components/chains";
 import { SprocketContainer } from "./components/sprockets";
 import { PartBrands } from "./constants";
+import { TransmissionContainer } from "./components/transmission";
 
 interface IPartsProps {
     parts: number;
@@ -48,7 +49,8 @@ export class Parts extends React.Component<IPartsProps, {}> {
             PartBrands.MIW +
             PartBrands.Chains +
             PartBrands.FrontSprockets +
-            PartBrands.RearSprockets;
+            PartBrands.RearSprockets +
+            PartBrands.Transmission;
 
         // tslint:disable-next-line:no-bitwise
         return ((this.props.parts & supported) !== 0);
@@ -69,6 +71,9 @@ export class Parts extends React.Component<IPartsProps, {}> {
         }
         else if (this.store.partStore instanceof SprocketStore) {
             return (<SprocketContainer store={this.store.partStore} />);
+        }
+        else if (this.store.partStore instanceof TransmissionStore) {
+            return (<TransmissionContainer store={this.store.partStore} />);
         }
         else {
             return null;

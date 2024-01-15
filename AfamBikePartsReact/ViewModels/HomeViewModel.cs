@@ -81,8 +81,16 @@ namespace AfamBikePartsReact.ViewModels
                     ProductGroups = new ProductGroup[] {
                          new ProductGroup{Name="Front sprockets", Value="FrontSprockets", Selected=true},
                          new ProductGroup{Name="Rear sprockets", Value="RearSprockets", Selected=false}
+                    }
+                  },
+                  new MainGroup {
+                    Name = "Transmission",
+                    Value = "transmission",
+                    Selected = false,
+                    ProductGroups = new ProductGroup[] {
+                         new ProductGroup{Name="Transmission", Value="Transmission", Selected=true}
+                    }
                   }
-                }
             };
 
             SelectedMainGroup = "kits";

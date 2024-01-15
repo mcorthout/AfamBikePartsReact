@@ -30,7 +30,7 @@ export class ChainContainer extends React.Component<IChainContainerProps, {}> {
                         show={this.props.store.ChainImageModalVisible}
                         onHide={() => { this.props.store.HideChainImage(); }}
                         modalId="ChainImageModal"
-                        imageId="ChainImageModalImage"
+                        imageId="ChainModalImage"
                         title={this.props.store.ChainImageTitle}
                         closeText={this.props.store.polyglot.t("Close")}
                     />

@@ -6,3 +6,4 @@ export { BatteryStore } from "./batterystore";
 export { FilterStore } from "./filterstore";
 export { ChainStore } from "./chainstore";
 export { SprocketStore } from "./sprocketstore";
+export { TransmissionStore } from "./transmissionstore";
