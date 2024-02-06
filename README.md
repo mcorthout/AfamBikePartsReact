@@ -6,7 +6,11 @@ This project contains a React client application which illustrates how to make u
 
 The React client also illustrates the construction of a client side configurator for [Afam](https://afam.com/) motorcycle transmission kits.
 
-Demo: https://www.afam.com/en/service-2/kit-configurator-afam/
+Used on the actual site: https://afam-group.com/afam-kits-product-finder
+
+Transmission: https://mcorthout.github.io/AfamBikePartsReact/index.html
+Batteries: https://mcorthout.github.io/AfamBikePartsReact/batteries.html
+Filters: https://mcorthout.github.io/AfamBikePartsReact/filters.html
 
 ## Audience
 
