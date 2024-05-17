@@ -8,8 +8,8 @@ The React client also illustrates the construction of a client side configurator
 
 Used on the actual site: https://afam-group.com/afam-kits-product-finder
 
-Transmission: https://mcorthout.github.io/AfamBikePartsReact/index.html
-Batteries: https://mcorthout.github.io/AfamBikePartsReact/batteries.html
+Transmission: https://mcorthout.github.io/AfamBikePartsReact/index.html\
+Batteries: https://mcorthout.github.io/AfamBikePartsReact/batteries.html\
 Filters: https://mcorthout.github.io/AfamBikePartsReact/filters.html
 
 ## Audience
