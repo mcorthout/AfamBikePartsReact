@@ -36,11 +36,32 @@ export class BikeStore {
         BikeService.GetBrands(this.partbrand, this.bike, this.updateBrands);
     }
 
+    private readonly TopBrands = [
+        "BMW",
+        "DUCATI",
+        "HONDA",
+        "HUSQVARNA",
+        "KAWASAKI",
+        "KTM",
+        "SUZUKI",
+        "TRIUMPH",
+        "YAMAHA"
+    ];
+
     @action
     private updateBrands(brands: string[]): void {
-        if (brands.length > 1) {
-            brands.unshift(this.polyglot.t("SelectBrand"));
-        }
+
+        // Check that each brand in the list of top brands actually is in the list of brands
+        var existingBrands = this.TopBrands.filter((brand) => brands.includes(brand));
+
+        // Prepend the "Select Brand" option to the list of brands
+        existingBrands.unshift(this.polyglot.t("SelectBrand"));
+
+        // Append a separator
+        existingBrands.push("----------");
+
+        // Concatenate with the rest of the brands
+        brands = existingBrands.concat(brands);
 
         this.bike.brands = brands;
         this.bike.selectedBrand = brands[0];
