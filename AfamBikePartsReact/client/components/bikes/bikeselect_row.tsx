@@ -25,7 +25,7 @@ export class BikeSelectRow extends React.Component<IBikeSelectRowProperties, {}>
         let span = null;
 
         if (this.props.items.length > 0) {
-            selectOptions = this.props.items.map((b) => <option key={b} value={b}>{b}</option>);
+            selectOptions = this.props.items.map((b, i) => <option key={b+i} value={b}>{b}</option>);
 
             let selectClass = "";
             let spanClass = "";
