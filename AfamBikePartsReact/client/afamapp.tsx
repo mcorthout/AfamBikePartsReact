@@ -30,8 +30,8 @@ function brandsToParts(brands: string[]): number {
 
     let parts: number = 0;
 
-    for (const brand of brands) {
-        parts += PartBrands[brand]
+    for (var brand of brands) {
+        parts += PartBrands[brand as keyof typeof PartBrands]
     }
 
     return parts;

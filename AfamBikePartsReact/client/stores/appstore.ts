@@ -19,7 +19,7 @@ export class AppStore {
 
     constructor(public parts: number = 1, public language: string = "en") {
         // Configure polyglot
-        let translationTable = Translations[language];
+        let translationTable = Translations[language as keyof typeof Translations];
 
         if (!translationTable) {
             translationTable = Translations.en;

@@ -5,7 +5,7 @@ import { BikeModel } from "../../models";
 import { PartBrands } from "../../constants";
 
 BikeService.GetBrands = (parts: number, bike: BikeModel, done: (brands: string[]) => void): void => {
-    done(["A", "B"]);
+    done(["BMW", "A", "B"]);
 }
 
 BikeService.GetCCs = (parts: number, bike: BikeModel, done: (ccs: string[]) => void): void => {
@@ -60,7 +60,8 @@ describe("BikeStore", () => {
     it("contains a list of bike brands", () => {
         const store = new BikeStore(new AppStore(PartBrands.AFAM, "nl"));
         expect(store.bike).toBeDefined();
-        expect(store.bike.brands.length).toBe(2 + 1); // Plus extra <Select a brand> option if more than one brand
+        expect(store.bike.brands.length).toBe(1 + 1 + 1 + 3);
+        // The "select a brand" option + the "top brand" that is actually in the list + a separator + the 3 brands
     });
 
     it("retrieves a list of ccs", () => {
