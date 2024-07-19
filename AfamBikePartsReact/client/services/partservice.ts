@@ -1,4 +1,3 @@
-import axios from "axios";
 import { BatteryModel, ChainInfoModel, FilterModel, KitModel, SprocketListModel } from "../models";
 import { ApplicationHost } from "../constants";
 
@@ -25,10 +24,14 @@ export class PartService {
     }
 
     private static Get<T>(URL: string, done: (values: T) => void, errorValue: T): void {
-        axios
-            .get(URL)
-            .then((response) => {
-                done(response.data);
+        fetch(URL)
+            .then(async (response) => {
+                if (response.ok) {
+                    done(await response.json());
+                }
+                else {
+                    done(errorValue);
+                }
             })
             .catch((error) => done(errorValue));
     }

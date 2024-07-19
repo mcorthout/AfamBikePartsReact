@@ -12,7 +12,6 @@
   "dependencies": {
     "acorn": "^8.12.1",
     "aspnet-prerendering": "3.0.1",
-    "axios": "^1.7.2",
     "eslint": "9.7.0",
     "kind-of": "6.0.3",
     "minimist": "1.2.8",

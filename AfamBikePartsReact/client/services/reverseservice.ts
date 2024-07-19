@@ -1,4 +1,3 @@
-import axios from "axios";
 import { BikeReverseModel } from "../models";
 
 export class ReverseService {
@@ -8,10 +7,14 @@ export class ReverseService {
     }
 
     private static Get<T>(URL: string, done: (values: T) => void, errorValue: T): void {
-        axios
-            .get(URL)
-            .then((response) => {
-                done(response.data);
+        fetch(URL)
+            .then(async (response) => {
+                if (response.ok) {
+                    done(await response.json());
+                }
+                else {
+                    done(errorValue);
+                }
             })
             .catch((error) => done(errorValue));
     }
