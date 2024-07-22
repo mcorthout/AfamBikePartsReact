@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
+import * as ReactDOM from "react-dom/client";
 import { Parts } from "./parts";
 import { PartBrands } from "./constants";
 
@@ -20,8 +20,10 @@ function renderApp() {
             }
         }
 
-        ReactDOM.render(
-            <Parts language={language} parts={parts}></Parts>, root,
+        const reactRoot = ReactDOM.createRoot(root);
+
+        reactRoot.render(
+            <Parts language={language} parts={parts}></Parts>
         );
     }
 }
