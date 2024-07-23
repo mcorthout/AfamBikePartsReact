@@ -73,12 +73,12 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
             theParts = chains.map((s, i) => {
                 let chainImage = ProductImageBase + "chains/" + s.ColorName + ".jpg";
                 return (<tr key={i.toString()} >
-                    <td data-label="Item" className="cell-center">{s.ChainName}</td>
-                    <td data-label="Pitch" className="cell-center">{s.Pitch}</td>
-                    <td data-label="Length" className="cell-center">{s.Length}</td>
-                    <td data-label="Description" className="cell-center">{s.Description}</td>
-                    <td data-label="OuterColor" className="cell-center">{s.OuterColor}</td>
-                    <td data-label="Applications" className="cell-center">
+                    <td data-label="Item">{s.ChainName}</td>
+                    <td data-label="Pitch">{s.Pitch}</td>
+                    <td data-label="Length">{s.Length}</td>
+                    <td data-label="Description">{s.Description}</td>
+                    <td data-label="OuterColor">{s.OuterColor}</td>
+                    <td data-label="Applications" className="centered">
                         <a href="#">
                             <img
                                 src={CommonImageBase + "bike.png"}
@@ -86,17 +86,17 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                             />
                         </a>
                     </td>
-                    <td data-label="Image" className="cell-center">
-                        <a className="image-popup-fit-width" href="#">
+                    <td data-label="Image" className="centered">
+                        <a href="#">
                             <img
-                                className="chain-thumbnail"
+                                className="part-image"
                                 src={chainImage}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
                             />
                         </a>
                     </td>
-                    <td>
+                    <td data-label="Info" className="centered">
                         <a href="#">
                             <img
                                 className="info-image"
@@ -116,14 +116,14 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                 <table className="part-table chain-table">
                     <thead>
                         <tr>
-                            <th className="cell-center">{translate.t("Item")}</th>
-                            <th className="cell-center">{translate.t("Pitch")}</th>
-                            <th className="cell-center">{translate.t("Length")}</th>
-                            <th className="cell-center">{translate.t("Description")}</th>
-                            <th className="cell-center">{translate.t("OuterColor")}</th>
-                            <th className="cell-center">{translate.t("Applications")}</th>
-                            <th className="cell-center">{translate.t("Image")}</th>
-                            <th className="cell-center">Info</th>
+                            <th>{translate.t("Item")}</th>
+                            <th>{translate.t("Pitch")}</th>
+                            <th>{translate.t("Length")}</th>
+                            <th>{translate.t("Description")}</th>
+                            <th>{translate.t("OuterColor")}</th>
+                            <th>{translate.t("Applications")}</th>
+                            <th>{translate.t("Image")}</th>
+                            <th>Info</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -147,28 +147,28 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                     <table className="part-table chain-table collapsed" key={i.toString()}>
                         <tbody>
                             <tr>
-                                <td className="firstcol">{translate.t("Item")}</td>
+                                <td>{translate.t("Item")}</td>
                                 <td>{s.ChainName}</td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("Pitch")}</td>
+                                <td>{translate.t("Pitch")}</td>
                                 <td>{s.Pitch}</td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("Length")}</td>
+                                <td>{translate.t("Length")}</td>
                                 <td>{s.Length}</td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("Description")}</td>
+                                <td>{translate.t("Description")}</td>
                                 <td>{s.Description}</td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("OuterColor")}</td>
+                                <td>{translate.t("OuterColor")}</td>
                                 <td>{s.OuterColor}</td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("Applications")}</td>
-                                <td data-label="Applications" className="cell-center">
+                                <td>{translate.t("Applications")}</td>
+                                <td data-label="Applications" className="centered">
                                     <a href="#">
                                         <img
                                             src={CommonImageBase + "bike.png"}
@@ -178,11 +178,11 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                                 </td>
                             </tr>
                             <tr>
-                                <td className="firstcol">{translate.t("Image")}</td>
-                                <td data-label="Image" className="cell-center">
-                                    <a className="image-popup-fit-width" href="#">
+                                <td>{translate.t("Image")}</td>
+                                <td data-label="Image" className="centered">
+                                    <a href="#">
                                         <img
-                                            className="chain-thumbnail"
+                                            className="part-image"
                                             src={chainImage}
                                             onError={(e) => this.ImageError(e.currentTarget)}
                                             onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}

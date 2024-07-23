@@ -51,6 +51,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
             chainTypeOptions = chainTypes.map((t) => <option key={t} value={t}>{t}</option>);
             chainTypeSelect =
                 <select className="kitpart-component-cell-value kitpart-inline"
+                    name="chainTypeSelector"
                     value={selectedChain.ChainType}
                     onChange={this.handleTypeChange}>
                     {chainTypeOptions}
@@ -71,6 +72,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
             chainColorOptions = chainColors.map((t) => <option key={t} value={t}>{t}</option>);
             chainColorSelect =
                 <select className="kitpart-component-cell-value kitpart-inline"
+                    name="chainColorSelector"
                     value={selectedChain.ChainColor}
                     onChange={this.handleColorChange}>
                     {chainColorOptions}
@@ -128,7 +130,6 @@ export class Chain extends React.Component<IChainProps, IChainState> {
                     <a href="#">
                         <img
                             src={imageURL}
-                            className="chain-thumbnail"
                             onError={(e) => this.ImageError(e.currentTarget)}
                             onClick={(e) => { this.props.store.ShowChainImage(chain, imageURL); e.preventDefault(); }}
                         />

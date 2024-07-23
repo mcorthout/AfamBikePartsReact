@@ -72,16 +72,16 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
         if (batteries) {
             theParts = batteries.map((s, i) =>
                 <tr key={i.toString()} >
-                    <td data-label="Item" className="cell-center">{s.Part}</td>
-                    <td data-label="EAN" className="cell-center">{s.EAN}</td>
-                    <td data-label="Type" className="cell-center">{s.BatteryType}</td>
-                    <td data-label="Volt" className="cell-center">{s.Volt} V</td>
-                    <td data-label="Capacity" className="cell-center">{s.Capacity} Ah</td>
-                    <td data-label="CCA" className="cell-center">{s.CCA} A</td>
-                    <td data-label="AGM" className="cell-center">{s.AGM}</td>
-                    <td data-label="Gel" className="cell-center">{s.Gel}</td>
-                    <td data-label="Acid" className="cell-center">{s.Acid}</td>
-                    <td data-label="Info" className="cell-center">
+                    <td data-label="Item">{s.Part}</td>
+                    <td data-label="EAN">{s.EAN}</td>
+                    <td data-label="Type">{s.BatteryType}</td>
+                    <td data-label="Volt">{s.Volt} V</td>
+                    <td data-label="Capacity">{s.Capacity} Ah</td>
+                    <td data-label="CCA">{s.CCA} A</td>
+                    <td data-label="AGM">{s.AGM}</td>
+                    <td data-label="Gel">{s.Gel}</td>
+                    <td data-label="Acid">{s.Acid}</td>
+                    <td data-label="Info" className="centered">
                         <a href="#">
                             <img
                                 className="info-image"
@@ -90,9 +90,9 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                             />
                         </a>
                     </td>
-                    <td data-label="Image" className="cell-center">
-                        <a className="image-popup-fit-width" href="#">
-                            <img
+                    <td data-label="Image" className="centered">
+                        <a href="#">
+                            <img className="part-image"
                                 src={s.Photo}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowBatteryImage(s); e.preventDefault(); }}
@@ -109,17 +109,17 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                 <table className="part-table">
                     <thead>
                         <tr>
-                            <th className="cell-center">{translate.t("Item")}</th>
-                            <th className="cell-center">{translate.t("EAN")}</th>
-                            <th className="cell-center">{translate.t("Technology")}</th>
-                            <th className="cell-center">{translate.t("Voltage")}</th>
-                            <th className="cell-center">{translate.t("Capacity")}</th>
-                            <th className="cell-center">{translate.t("CCA")}</th>
-                            <th className="cell-center">{translate.t("AGM")}</th>
-                            <th className="cell-center">{translate.t("Gel")}</th>
-                            <th className="cell-center">{translate.t("Acid")}</th>
-                            <th className="cell-center">Info</th>
-                            <th className="cell-center">{translate.t("Image")}</th>
+                            <th>{translate.t("Item")}</th>
+                            <th>{translate.t("EAN")}</th>
+                            <th>{translate.t("Technology")}</th>
+                            <th>{translate.t("Voltage")}</th>
+                            <th>{translate.t("Capacity")}</th>
+                            <th>{translate.t("CCA")}</th>
+                            <th>{translate.t("AGM")}</th>
+                            <th>{translate.t("Gel")}</th>
+                            <th>{translate.t("Acid")}</th>
+                            <th>Info</th>
+                            <th>{translate.t("Image")}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -178,9 +178,9 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                         </tr>
                         <tr>
                             <td>Info</td>
-                            <td data-label="Info" className="cell-center">
+                            <td data-label="Info" className="centered">
                                 <a href="#">
-                                    <img
+                                    <img className="info-image"
                                         src={CommonImageBase + "info.png"}
                                         onClick={(e) => { this.props.store.ShowBatteryInfo(s); e.preventDefault(); }}
                                     />
@@ -189,9 +189,9 @@ export class BatteryList extends React.Component<IBatteryListProps, IBatteryList
                         </tr>
                         <tr>
                             <td>{translate.t("Image")}</td>
-                            <td data-label="Image" className="cell-center">
-                                <a className="image-popup-fit-width" href="#">
-                                    <img
+                            <td data-label="Image" className="centered">
+                                <a href="#">
+                                    <img className="part-image" 
                                         src={s.Photo}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowBatteryImage(s); e.preventDefault(); }}

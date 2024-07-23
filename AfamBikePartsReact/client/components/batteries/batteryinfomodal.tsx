@@ -21,18 +21,18 @@ interface IBatteryInfoModalProps {
             let polarity = null;
             if (battery.PolarityLocation != "") {
                 polarity =
-                    <div className="battery-info-drawing-row">
-                        <div className="battery-info-cell-label cell-right">{poly.t("PolarityLocation")}</div>
-                        <img src={battery.PolarityDrawing} className="battery-layout-image" />
+                    <div>
+                        <div>{poly.t("PolarityLocation")}</div>
+                        <img src={battery.PolarityDrawing} />
                     </div>
             }
 
             let exhaust = null;
             if (battery.ExhaustPosition != "") {
                 exhaust =
-                    <div className="battery-info-drawing-row">
-                        <div className="battery-info-cell-label cell-right">{poly.t("ExhaustPosition")}</div>
-                        <img src={battery.ExhaustDrawing} className="battery-layout-image" />
+                    <div>
+                        <div>{poly.t("ExhaustPosition")}</div>
+                        <img src={battery.ExhaustDrawing} />
                     </div>
             }
 
@@ -57,89 +57,87 @@ interface IBatteryInfoModalProps {
                         </div>
                         <div className="modal_body">
                             <div className="battery-info">
-                                <div className="battery-info-left">
-                                    <div id="battery-info-table">
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Voltage")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoVolt">{battery.Volt}</div>
-                                            <div className="battery-info-cell">V</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Capacity")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoCapacity">{battery.Capacity}</div>
-                                            <div className="battery-info-cell">Ah</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("CCA")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoCCA">{battery.CCA}</div>
-                                            <div className="battery-info-cell">A</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("AGM")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoAGM">{battery.AGM}</div>
-                                            <div className="battery-info-cell"></div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Gel")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoGEL">{battery.Gel}</div>
-                                            <div className="battery-info-cell"></div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Length")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoLength">{battery.Length}</div>
-                                            <div className="battery-info-cell">mm</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Width")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoWidth">{battery.Width}</div>
-                                            <div className="battery-info-cell">mm</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("Height")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoHeight">{battery.Height}</div>
-                                            <div className="battery-info-cell">mm</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("DryWeight")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoDryWeight">{(battery.DryWeight === 0) ? "--" : battery.DryWeight}</div>
-                                            <div className="battery-info-cell">kg</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("FilledWeight")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoFilledWeight">{(battery.FilledWeight === 0) ? "--" : battery.FilledWeight}</div>
-                                            <div className="battery-info-cell">kg</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("AcidVolume")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoAcidVolume">{(battery.AcidVolume === 0) ? "--" : battery.AcidVolume}</div>
-                                            <div className="battery-info-cell">{poly.t("Liter")}</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("ChargePreferred")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoChargePreferred">{battery.ChargePreferred}</div>
-                                            <div className="battery-info-cell">A</div>
-                                        </div>
-                                        <div className="battery-info-row">
-                                            <div className="battery-info-cell-label cell-right">{poly.t("ChargeMax")}:</div>
-                                            <div className="battery-info-cell cell-right" id="batterInfoChargeMax">{battery.ChargeMax}</div>
-                                            <div className="battery-info-cell">A</div>
-                                        </div>
+                                <div className="battery-info-table">
+                                    <div>
+                                        <div>{poly.t("Voltage")}:</div>
+                                        <div id="batterInfoVolt">{battery.Volt}</div>
+                                        <div>V</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("Capacity")}:</div>
+                                        <div id="batterInfoCapacity">{battery.Capacity}</div>
+                                        <div>Ah</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("CCA")}:</div>
+                                        <div id="batterInfoCCA">{battery.CCA}</div>
+                                        <div>A</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("AGM")}:</div>
+                                        <div id="batterInfoAGM">{battery.AGM}</div>
+                                        <div></div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("Gel")}:</div>
+                                        <div id="batterInfoGEL">{battery.Gel}</div>
+                                        <div></div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("Length")}:</div>
+                                        <div id="batterInfoLength">{battery.Length}</div>
+                                        <div>mm</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("Width")}:</div>
+                                        <div id="batterInfoWidth">{battery.Width}</div>
+                                        <div>mm</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("Height")}:</div>
+                                        <div id="batterInfoHeight">{battery.Height}</div>
+                                        <div>mm</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("DryWeight")}:</div>
+                                        <div id="batterInfoDryWeight">{(battery.DryWeight === 0) ? "--" : battery.DryWeight}</div>
+                                        <div>kg</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("FilledWeight")}:</div>
+                                        <div id="batterInfoFilledWeight">{(battery.FilledWeight === 0) ? "--" : battery.FilledWeight}</div>
+                                        <div>kg</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("AcidVolume")}:</div>
+                                        <div id="batterInfoAcidVolume">{(battery.AcidVolume === 0) ? "--" : battery.AcidVolume}</div>
+                                        <div>{poly.t("Liter")}</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("ChargePreferred")}:</div>
+                                        <div id="batterInfoChargePreferred">{battery.ChargePreferred}</div>
+                                        <div>A</div>
+                                    </div>
+                                    <div>
+                                        <div>{poly.t("ChargeMax")}:</div>
+                                        <div id="batterInfoChargeMax">{battery.ChargeMax}</div>
+                                        <div>A</div>
                                     </div>
                                 </div>
-                                <div className="battery-info-right">
+                                <div className="battery-drawings">
                                     {polarity}
                                     {exhaust}
-                                    <div className="battery-info-drawing-row">
-                                        <div className="battery-info-cell-label cell-right">{poly.t("TerminalTop")}</div>
-                                        <img src={battery.TerminalTop} className="battery-terminal-image" />
+                                    <div>
+                                        <div>{poly.t("TerminalTop")}</div>
+                                        <img src={battery.TerminalTop} />
                                     </div>
-                                    <div className="battery-info-drawing-row">
-                                        <div className="battery-info-cell-label cell-right">{poly.t("TerminalFront")}</div>
-                                        <img src={battery.TerminalFront} className="battery-terminal-image" />
+                                    <div>
+                                        <div>{poly.t("TerminalFront")}</div>
+                                        <img src={battery.TerminalFront} />
                                     </div>
-                                    <div className="battery-info-drawing-row">
-                                        <div className="battery-info-cell-label cell-right">{poly.t("TerminalSide")}</div>
-                                        <img src={battery.TerminalSide} className="battery-terminal-image" />
+                                    <div>
+                                        <div>{poly.t("TerminalSide")}</div>
+                                        <img src={battery.TerminalSide} />
                                     </div>
                                     <div className="reverse-link">
                                         <button type="button" onClick={(e) => { this.props.store.ShowReversedBikes(battery); e.preventDefault(); }}>{poly.t("ApplicationList")}</button>

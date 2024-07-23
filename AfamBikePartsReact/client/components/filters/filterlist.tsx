@@ -72,10 +72,10 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
         if (filters) {
             theParts = filters.map((s, i) =>
                 <tr key={i.toString()} >
-                    <td data-label="Item" className="cell-center">{s.Part}</td>
-                    <td data-label="EAN" className="cell-center">{s.EAN}</td>
-                    <td data-label="Type" className="cell-center">{s.Type}</td>
-                    <td data-label="Applications" className="cell-center">
+                    <td data-label="Item">{s.Part}</td>
+                    <td data-label="EAN">{s.EAN}</td>
+                    <td data-label="Type">{s.Type}</td>
+                    <td data-label="Applications" className="centered">
                         <a href="#">
                             <img
                                 src={CommonImageBase + "bike.png"}
@@ -83,18 +83,18 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                             />
                         </a>
                     </td>
-                    <td data-label="Image" className="cell-center">
-                        <a className="image-popup-fit-width" href="#">
-                            <img
+                    <td data-label="Image" className="centered">
+                        <a href="#">
+                            <img className="part-image"
                                 src={s.Photo}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowFilterImage(s, s.Photo); e.preventDefault(); }}
                             />
                         </a>
                     </td>
-                    <td data-label="Image" className="cell-center">
-                        <a className="image-popup-fit-width" href="#">
-                            <img
+                    <td data-label="Image" className="centered">
+                        <a href="#">
+                            <img className="part-image"
                                 src={s.Drawing}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowFilterDrawing(s, s.Drawing); e.preventDefault(); }}
@@ -111,12 +111,12 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                 <table className="part-table">
                     <thead>
                         <tr>
-                            <th className="cell-center">{translate.t("Item")}</th>
-                            <th className="cell-center">{translate.t("EAN")}</th>
-                            <th className="cell-center">{translate.t("Type")}</th>
-                            <th className="cell-center">{translate.t("Applications")}</th>
-                            <th className="cell-center">{translate.t("Image")}</th>
-                            <th className="cell-center">{translate.t("Drawing")}</th>
+                            <th>{translate.t("Item")}</th>
+                            <th>{translate.t("EAN")}</th>
+                            <th>{translate.t("Type")}</th>
+                            <th>{translate.t("Applications")}</th>
+                            <th>{translate.t("Image")}</th>
+                            <th>{translate.t("Drawing")}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -138,20 +138,20 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                 <table className="part-table collapsed" key={i.toString()}>
                     <tbody>
                         <tr>
-                            <td className="firstcol">{translate.t("Item")}</td>
+                            <td>{translate.t("Item")}</td>
                             <td>{s.Part}</td>
                         </tr>
                         <tr>
-                            <td className="firstcol">{translate.t("EAN")}</td>
+                            <td>{translate.t("EAN")}</td>
                             <td>{s.EAN}</td>
                         </tr>
                         <tr>
-                            <td className="firstcol">{translate.t("Type")}</td>
+                            <td>{translate.t("Type")}</td>
                             <td data-label="Type" >{s.Type}</td>
                         </tr>
                         <tr>
-                            <td className="firstcol">{translate.t("Applications")}</td>
-                            <td className="cell-center">
+                            <td>{translate.t("Applications")}</td>
+                            <td data-label="Applications" className="centered">
                                 <a href="#">
                                     <img
                                         src={CommonImageBase + "bike.png"}
@@ -161,10 +161,10 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                             </td>
                         </tr>
                         <tr>
-                            <td className="firstcol">{translate.t("Image")}</td>
-                            <td data-label="Image" className="cell-center">
-                                <a className="image-popup-fit-width" href="#">
-                                    <img
+                            <td>{translate.t("Image")}</td>
+                            <td data-label="Image" className="centered">
+                                <a href="#">
+                                    <img className="part-image"
                                         src={s.Photo}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowFilterImage(s, s.Photo); e.preventDefault(); }}
@@ -173,10 +173,10 @@ export class FilterList extends React.Component<IFilterListProps, IFilterListSta
                             </td>
                         </tr>
                         <tr>
-                            <td className="firstcol">{translate.t("Drawing")}</td>
-                            <td data-label="Drawing" className="cell-center">
-                                <a className="image-popup-fit-width" href="#">
-                                    <img
+                            <td>{translate.t("Drawing")}</td>
+                            <td data-label="Drawing" className="centered">
+                                <a href="#">
+                                    <img className="part-image"
                                         src={s.Drawing}
                                         onError={(e) => this.ImageError(e.currentTarget)}
                                         onClick={(e) => { this.props.store.ShowFilterDrawing(s, s.Drawing); e.preventDefault() }}

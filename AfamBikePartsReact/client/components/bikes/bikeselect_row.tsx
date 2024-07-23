@@ -39,7 +39,9 @@ export class BikeSelectRow extends React.Component<IBikeSelectRowProperties, {}>
             }
 
             select =
-                <select className={selectClass}
+                <select
+                    name="bikeSelector"
+                    className={selectClass}
                     value={this.props.selectedOption}
                     onChange={this.handleSelectChange}>
                     {selectOptions}

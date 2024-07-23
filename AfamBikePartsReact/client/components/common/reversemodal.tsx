@@ -46,13 +46,13 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
 
             if (bikesToDisplay) {
                 bikelist = bikesToDisplay.map((b, i) =>
-                    <div key={"reverse_" + i} className="bike-reverse-row">
-                        <div className="bike-reverse-cell cell-left">{b.Brand}</div>
-                        <div className="bike-reverse-cell cell-center">{b.Cc}</div>
-                        <div className="bike-reverse-cell cell-left">{b.Model}</div>
-                        <div className="bike-reverse-cell cell-center">{b.From}</div>
-                        <div className="bike-reverse-cell cell-center">{b.To}</div>
-                    </div>,
+                   <div key={"reverse_" + i}>
+                        <div className="cell-left">{b.Brand}</div>
+                        <div className="cell-center">{b.Cc}</div>
+                        <div className="cell-left">{b.Model}</div>
+                        <div className="cell-center">{b.From}</div>
+                        <div className="cell-center">{b.To}</div>
+                   </div>,
                 );
             }
 
@@ -77,15 +77,17 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
                             </button>
                         </div>
                         <div className="modal_body">
-                            <div className="bike-reverse-table">
-                                <div className="bike-reverse-row">
-                                    <div className="bike-reverse-header cell-center">{poly.t("Brand")}</div>
-                                    <div className="bike-reverse-header cell-center">{poly.t("Cc")}</div>
-                                    <div className="bike-reverse-header cell-center">{poly.t("Model")}</div>
-                                    <div className="bike-reverse-header cell-center">{poly.t("From")}</div>
-                                    <div className="bike-reverse-header cell-center">{poly.t("To")}</div>
+                            <div className="bike-reverse-body">
+                                <div className="bike-reverse-table">
+                                   <div>
+                                        <div>{poly.t("Brand")}</div>
+                                        <div>{poly.t("Cc")}</div>
+                                        <div>{poly.t("Model")}</div>
+                                        <div>{poly.t("From")}</div>
+                                        <div>{poly.t("To")}</div>
+                                   </div>
+                                   {bikelist}                               
                                 </div>
-                                {bikelist}
                                 <div className="paginator">
                                     <ReactPaginate
                                         previousLabel={poly.t("Previous")}
@@ -96,11 +98,11 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
                                         marginPagesDisplayed={2}
                                         pageRangeDisplayed={3}
                                         onPageChange={this.updatePage}
-                                        activeClassName={"paginator-active"}
+                                        activeClassName={"active"}
                                         initialPage={0}
                                         hrefBuilder={() => { return "#"; }}
                                     />
-                                </div>
+                                    </div>
                             </div>
                         </div>
                         <div className="modal_footer">

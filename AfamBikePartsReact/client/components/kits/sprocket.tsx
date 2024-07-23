@@ -56,6 +56,7 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
                     <div className="kitpart-inline">
                         <span className="kitpart-component-cell-label kitpart-inline">{poly.t("Teeth")}:</span>
                         <select className="kitpart-component-cell-value kitpart-inline"
+                            name="sprocketSelector"
                             value={selectedSprocket.SprocketName}
                             onChange={this.handleChange}>{sprocketOptions}
                         </select>
@@ -83,7 +84,6 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
                     <a href="#">
                         <img
                             src={imageURL}
-                            className="sprocket-thumbnail"
                             onError={(e) => this.ImageError(e.currentTarget)}
                             onClick={(e) => { this.props.store.ShowSprocketImage(sprocket, imageURL); e.preventDefault(); }}
                         />
