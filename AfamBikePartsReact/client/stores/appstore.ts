@@ -56,7 +56,7 @@ export class AppStore {
             this.partStore = new TransmissionStore(this);
         }
         else {
-            this.partStore = new PartStore();
+            this.partStore = new KitStore(this);
         }
         /* tslint:enable:no-bitwise */
     }

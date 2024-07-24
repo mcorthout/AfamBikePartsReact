@@ -5,7 +5,7 @@ import { PartService, InfoService, ReverseService} from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
-export class ChainStore extends PartStore {
+export class ChainStore implements PartStore {
     public polyglot: Polyglot;
 
     @observable
@@ -86,8 +86,6 @@ export class ChainStore extends PartStore {
     private bikeId: number;
 
     constructor(public appStore: AppStore) {
-        super();
-
         makeObservable(this);
 
         this.chains = [];

@@ -6,7 +6,7 @@ import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 import { ProductImageBase } from "../constants";
 
-export class BatteryStore extends PartStore {
+export class BatteryStore implements PartStore {
     //Provide translations
     public polyglot: Polyglot;
 
@@ -137,8 +137,6 @@ export class BatteryStore extends PartStore {
 
     // Create a new store
     constructor(public appStore: AppStore) {
-        super();
-
         makeObservable(this);
 
         this.batteries = [];

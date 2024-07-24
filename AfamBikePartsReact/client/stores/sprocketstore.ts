@@ -5,7 +5,7 @@ import { PartService, ReverseService} from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
-export class SprocketStore extends PartStore {
+export class SprocketStore implements PartStore {
     public polyglot: Polyglot;
 
     @observable
@@ -69,8 +69,6 @@ export class SprocketStore extends PartStore {
     private bikeId: number;
 
     constructor(public appStore: AppStore) {
-        super();
-
         makeObservable(this);
 
         this.sprockets = [];

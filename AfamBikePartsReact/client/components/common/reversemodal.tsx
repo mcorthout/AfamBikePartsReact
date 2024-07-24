@@ -34,13 +34,17 @@ export class ReverseModal extends React.Component<IReverseModalProps, IReverseMo
         });
     }
 
-    public render() {
+    public render() {        
         if (this.props.show) {
+            const allBikes = this.props.store.ReversedBikes;
+
+            if (!allBikes) {
+                return null;
+            }
+
             document.body.classList.add("modal-showing");
 
             let bikelist = null;
-
-            const allBikes = this.props.store.ReversedBikes;
             const pageCount = Math.ceil(allBikes.length / this.pageSize);
             const bikesToDisplay = allBikes.slice(this.state.selectedPage * this.pageSize, (this.state.selectedPage + 1) * this.pageSize);
 

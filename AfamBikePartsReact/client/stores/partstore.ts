@@ -1,18 +1,11 @@
 ﻿import * as Polyglot from "node-polyglot";
-import { BikeReverseModel } from "../models";
+import { BikeReverseModel } from "../models/bikereversemodel";
 
-export class PartStore {
-    private _bike: number;
+export interface PartStore {
+    get BikeId(): number;
+    set BikeId(value: number);
 
-    public get BikeId(): number {
-        return this._bike;
-    }
+    polyglot: Polyglot;
 
-    public set BikeId(value: number) {
-        this._bike = value;
-    }
-
-    public ReversedBikes: BikeReverseModel[];
-
-    public polyglot: Polyglot;
+    ReversedBikes?: BikeReverseModel[];
 }

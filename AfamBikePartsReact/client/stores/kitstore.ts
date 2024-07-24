@@ -6,7 +6,7 @@ import { InfoService } from "../services/infoservice";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
-export class KitStore extends PartStore {
+export class KitStore implements PartStore {
     public polyglot: Polyglot;
 
     // The kits managed by this store
@@ -81,9 +81,7 @@ export class KitStore extends PartStore {
     // The bike for which kits are shown
     private bikeId: number;
 
-    constructor(public appStore: AppStore) {
-        super();
-
+    constructor(public appStore: AppStore) {        
         makeObservable(this);
 
         this.kits = [];
@@ -108,7 +106,7 @@ export class KitStore extends PartStore {
         this.loadChainInfo = this.loadChainInfo.bind(this);
 
         this.HideChainInfo = this.HideChainInfo.bind(this);
-    }
+    }   
 
     @computed
     public get hasKits(): boolean {

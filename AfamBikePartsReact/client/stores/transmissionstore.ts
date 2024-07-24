@@ -7,7 +7,7 @@ import { KitStore } from "./kitstore";
 import { PartStore } from "./partstore";
 import { SprocketStore } from "./sprocketstore";
 
-export class TransmissionStore extends PartStore {
+export class TransmissionStore implements PartStore {
     public polyglot: Polyglot;
 
     @observable
@@ -39,7 +39,6 @@ export class TransmissionStore extends PartStore {
     }
 
     constructor(public appStore: AppStore) {
-        super();
         makeObservable(this);        
         this.polyglot = this.appStore.polyglot;
 
@@ -54,6 +53,6 @@ export class TransmissionStore extends PartStore {
 
         var rearAppStore = new AppStore(PartBrands.RearSprockets, this.appStore.language)
         this.rearsprocketstore = new SprocketStore(rearAppStore);
-    }
+    }   
 
 }
