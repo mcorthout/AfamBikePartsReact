@@ -21,12 +21,14 @@ export class FilterStore extends PartStore {
     @observable
     public FilterImageUrl: string;
 
+    @action
     public HideFilterImage(): void {
         document.body.classList.remove("modal-showing");
         this.FilterImageModalVisible = false;
         this.FilterImageTitle = "";
     }
 
+    @action
     public ShowFilterImage(filter: FilterModel, url: string): void {
         this.FilterImageTitle = filter.Part;
         this.FilterImageUrl = url;
@@ -40,12 +42,14 @@ export class FilterStore extends PartStore {
     @observable
     public FilterDrawingUrl: string;
 
+    @action
     public HideFilterDrawing(): void {
         document.body.classList.remove("modal-showing");
         this.FilterDrawingModalVisible = false;
         this.FilterImageTitle = "";
     }
 
+    @action
     public ShowFilterDrawing(filter: FilterModel, url: string): void {
         this.FilterImageTitle = filter.Part;
         this.FilterDrawingUrl = url;
@@ -62,6 +66,7 @@ export class FilterStore extends PartStore {
     @observable
     public ReversedBikes: BikeReverseModel[];
 
+    @action
     public HideReversedBikes(): void {
         document.body.classList.remove("modal-showing");
         this.FilterReverseModalVisible = false;
@@ -69,6 +74,7 @@ export class FilterStore extends PartStore {
         this.FilterReverseTitle = "";
     }
 
+    @action
     public ShowReversedBikes(filter: FilterModel): void {
         this.ReversedBikes = [];
         this.FilterReverseTitle = filter.Part;

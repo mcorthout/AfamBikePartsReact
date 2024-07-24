@@ -7,6 +7,7 @@ import { PartStore } from "./partstore";
 import { ProductImageBase } from "../constants";
 
 export class BatteryStore extends PartStore {
+    //Provide translations
     public polyglot: Polyglot;
 
     // The list of batteries managed by this store
@@ -23,12 +24,14 @@ export class BatteryStore extends PartStore {
     @observable
     public BatteryImageUrl: string;
 
+    @action
     public HideBatteryImage(): void {
         document.body.classList.remove("modal-showing");
         this.BatteryImageModalVisible = false;
         this.BatteryImageTitle = "";
     }
 
+    @action
     public ShowBatteryImage(battery: BatteryModel): void {
         this.BatteryImageUrl = battery.Photo;
         this.BatteryImageTitle = battery.Part;
@@ -42,11 +45,13 @@ export class BatteryStore extends PartStore {
     @observable
     public BatteryInfo: BatteryModel;
 
+    @action
     public HideBatteryInfo(): void {
         document.body.classList.remove("modal-showing");
         this.BatteryInfoModalVisible = false;
     }
 
+    @action
     public ShowBatteryInfo(battery: BatteryModel): void {
         this.BatteryInfo = battery;
         this.BatteryInfoModalVisible = true;
@@ -62,6 +67,7 @@ export class BatteryStore extends PartStore {
     @observable
     public ReversedBikes: BikeReverseModel[];
 
+    @action
     public HideReversedBikes(): void {
         document.body.classList.remove("modal-showing");
         this.BatteryReverseModalVisible = false;
@@ -69,6 +75,7 @@ export class BatteryStore extends PartStore {
         this.BatteryReverseTitle = "";
     }
 
+    @action
     public ShowReversedBikes(battery: BatteryModel): void {
         this.ReversedBikes = [];
         this.BatteryReverseTitle = battery.Part;

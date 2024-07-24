@@ -62,6 +62,7 @@ export class ChainStore extends PartStore {
     @observable
     public ReversedBikes: BikeReverseModel[];
 
+    @action
     public HideReversedBikes(): void {
         document.body.classList.remove("modal-showing");
         this.ChainReverseModalVisible = false;
@@ -69,6 +70,7 @@ export class ChainStore extends PartStore {
         this.ChainReverseTitle = "";
     }
 
+    @action
     public ShowReversedBikes(chain: ChainInfoModel): void {
         this.ReversedBikes = [];
         this.ChainReverseTitle = chain.ChainName;

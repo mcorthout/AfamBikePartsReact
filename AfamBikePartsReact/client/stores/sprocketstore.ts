@@ -11,7 +11,7 @@ export class SprocketStore extends PartStore {
     @observable
     public sprockets: SprocketListModel[];
 
-    // A modal to display an image of the chain
+    // A modal to display an image of the sprocket
     @observable
     public SprocketImageTitle: string;
 
@@ -35,23 +35,6 @@ export class SprocketStore extends PartStore {
         this.SprocketImageModalVisible = true;
     }
 
-    //// A modal to display sprocket technical information
-    //@observable
-    //public SprocketInfoModalVisible: boolean;
-
-    //@observable
-    //public SprocketInfo: SprocketInfoModel | undefined;
-
-    //@action
-    //public HideSprocketInfo(): void {
-    //    document.body.classList.remove("modal-showing");
-    //    this.SprocketInfoModalVisible = false;
-    //}
-
-    //public ShowSprocketInfo(sprocket: SprocketInfoModel): void {
-    //    InfoService.GetSprocketInfo(sprocket.PartId, this.appStore.language, this.loadChainInfo);
-    //}
-
     /* Reverse applications */
     @observable
     public SprocketReverseTitle: string;
@@ -62,6 +45,7 @@ export class SprocketStore extends PartStore {
     @observable
     public ReversedBikes: BikeReverseModel[];
 
+    @action
     public HideReversedBikes(): void {
         document.body.classList.remove("modal-showing");
         this.SprocketReverseModalVisible = false;
@@ -69,6 +53,7 @@ export class SprocketStore extends PartStore {
         this.SprocketReverseTitle = "";
     }
 
+    @action
     public ShowReversedBikes(sprocket: SprocketListModel): void {
         this.ReversedBikes = [];
         this.SprocketReverseTitle = sprocket.CatalogNumber;
@@ -96,18 +81,11 @@ export class SprocketStore extends PartStore {
         this.SprocketImageModalVisible = false;
         this.SprocketImageUrl = "";
 
-        //this.SprocketInfoModalVisible = false;
-        //this.SprocketInfo = undefined;
-
         this.SprocketReverseModalVisible = false;
         this.ReversedBikes = [];
         this.SprocketReverseTitle = "";
 
         this.updateSprockets = this.updateSprockets.bind(this);
-
-        //this.loadSprocketInfo = this.loadSprocketInfo.bind(this);
-        //this.HideSprocketInfo = this.HideSprocketInfo.bind(this);
-
         this.updateReverseBikes = this.updateReverseBikes.bind(this);
     }
 
@@ -154,14 +132,4 @@ export class SprocketStore extends PartStore {
     private updateSprockets(newSprockets: SprocketListModel[]): void {
         this.sprockets = newSprockets;
     }
-
-    //@action
-    //public loadSprocketInfo(info: SprocketListModel) {
-    //    if (info && info.PitchMm) {
-    //        this.SprocketInfo = info;
-    //        this.SprocketInfoModalVisible = true;
-    //    } else {
-    //        this.SprocketInfoModalVisible = false;
-    //    }
-    //}
 }
