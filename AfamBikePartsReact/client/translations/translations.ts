@@ -83,6 +83,7 @@
         ApplicableRearSprockets: "Applicable rear sprockets",
         PolarityLocation: "Polarity",
         ExhaustPosition: "Exhaust",
+        Info: "Info",
     },
     nl: {
         BikeSelect: "Kies een motorfiets",
@@ -168,6 +169,7 @@
         ApplicableRearSprockets: "Geschikte kettingwielen achteraan",
         PolarityLocation: "Polariteit",
         ExhaustPosition: "Ontluchting",
+        Info: "Info",
     },
     de: {
         BikeSelect: "Motorradwahl",
@@ -253,6 +255,7 @@
         ApplicableRearSprockets: "Geeignete Kettenräder",
         PolarityLocation: "Polarität",
         ExhaustPosition: "Entlüftungsöffnung",
+        Info: "Info",
     },
     fr: {
         BikeSelect: "Choisissez une moto",
@@ -338,5 +341,6 @@
         ApplicableRearSprockets: "Couronnes possibles",
         PolarityLocation: "Polarité",
         ExhaustPosition: "Ouverture de ventilation",
+        Info: "Info",
     },
 };
