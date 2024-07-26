@@ -250,6 +250,10 @@
     grid-template-columns: repeat(11, auto);
 }
 
+.chain-grid {
+    grid-template-columns: repeat(8, auto);
+}
+
 .item-grid div {
     border: 1px solid #5a5a5a;
     margin-top: -1px;
@@ -273,6 +277,10 @@
 @media screen and (max-width: 800px)
 {
     .battery-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .chain-grid {
         grid-template-columns: repeat(2, auto);
     }
 
