@@ -238,8 +238,70 @@
     display: table;
 }
 
-/* Parts */
+/* Collapsible item list*/
 
+.item-grid {
+    display: grid;
+    align-content: center;
+    width: fit-content;
+}
+
+.battery-grid {
+    grid-template-columns: repeat(11, auto);
+}
+
+.item-grid div {
+    border: 1px solid #5a5a5a;
+    margin-top: -1px;
+    margin-left: -1px;
+    padding: 0.5rem;
+    text-align: center;
+    align-content: center;
+}
+
+.item-grid .item-grid-col-header {
+    display: inline;
+    background-color: #00148e;
+    color: white;
+    text-align: center;
+}
+
+.item-grid .item-grid-row-header {
+    display: none;
+}
+
+@media screen and (max-width: 800px)
+{
+    .battery-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .item-grid .item-grid-col-header {
+        display: none;
+    }
+
+    .item-grid .item-grid-row-header {
+        display: inline;
+        background-color: #00148e;
+        color: white;
+        text-align: left;
+    }
+
+    .item-grid .item-grid-data {
+        text-align: left;
+    }
+
+    .item-grid .centered {
+        text-align: center;
+    }
+
+    .item-grid .item-grid-row-spacer {
+        margin-bottom: 1rem;
+    }
+}
+
+
+/* Parts */
 .partlist-container {
 }
 
