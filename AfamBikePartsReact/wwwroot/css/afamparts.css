@@ -254,6 +254,10 @@
     grid-template-columns: repeat(8, auto);
 }
 
+.filter-grid {
+    grid-template-columns: repeat(6, auto);
+}
+
 .item-grid div {
     border: 1px solid #5a5a5a;
     margin-top: -1px;
@@ -281,6 +285,10 @@
     }
 
     .chain-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .filter-grid {
         grid-template-columns: repeat(2, auto);
     }
 
