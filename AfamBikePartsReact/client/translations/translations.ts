@@ -84,6 +84,7 @@
         PolarityLocation: "Polarity",
         ExhaustPosition: "Exhaust",
         Info: "Info",
+        NoChainInfo: "No chain information found",
     },
     nl: {
         BikeSelect: "Kies een motorfiets",
@@ -170,6 +171,7 @@
         PolarityLocation: "Polariteit",
         ExhaustPosition: "Ontluchting",
         Info: "Info",
+        NoChainInfo: "Geen kettinginformatie gevonden",
     },
     de: {
         BikeSelect: "Motorradwahl",
@@ -256,6 +258,7 @@
         PolarityLocation: "Polarität",
         ExhaustPosition: "Entlüftungsöffnung",
         Info: "Info",
+        NoChainInfo: "Keine Ketteninformationen gefunden",
     },
     fr: {
         BikeSelect: "Choisissez une moto",
@@ -342,5 +345,6 @@
         PolarityLocation: "Polarité",
         ExhaustPosition: "Ouverture de ventilation",
         Info: "Info",
+        NoChainInfo: "Aucune information sur la chaîne trouvée",
     },
 };

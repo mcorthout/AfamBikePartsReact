@@ -81,7 +81,7 @@ export class KitStore implements PartStore {
     // The bike for which kits are shown
     private bikeId: number;
 
-    constructor(public appStore: AppStore) {        
+    constructor(public appStore: AppStore) {
         makeObservable(this);
 
         this.kits = [];
@@ -106,7 +106,7 @@ export class KitStore implements PartStore {
         this.loadChainInfo = this.loadChainInfo.bind(this);
 
         this.HideChainInfo = this.HideChainInfo.bind(this);
-    }   
+    }
 
     @computed
     public get hasKits(): boolean {
@@ -235,18 +235,14 @@ export class KitStore implements PartStore {
      */
     @action
     private updateSelectedChain(chains: KitChainModel[],
-                                selectedChain: KitChainModel,
-                                newChainLength: number): KitChainModel {
+        selectedChain: KitChainModel,
+        newChainLength: number): KitChainModel {
         return chains.find((c) => c.ChainBaseName === selectedChain.ChainBaseName) || chains[0];
     }
 
     @action
     public loadChainInfo(info: ChainInfoModel) {
-        if (info && info.PitchMm) {
-            this.ChainInfo = info;
-            this.ChainInfoModalVisible = true;
-        } else {
-            this.ChainInfoModalVisible = false;
-        }
+        this.ChainInfo = info;
+        this.ChainInfoModalVisible = true;
     }
 }

@@ -1,7 +1,7 @@
 ﻿import { action, computed, makeObservable, observable } from "mobx";
 import * as Polyglot from "node-polyglot";
 import { BikeReverseModel, ChainInfoModel } from "../models";
-import { PartService, InfoService, ReverseService} from "../services";
+import { PartService, InfoService, ReverseService } from "../services";
 import { AppStore } from "./appstore";
 import { PartStore } from "./partstore";
 
@@ -145,12 +145,8 @@ export class ChainStore implements PartStore {
     }
 
     @action
-    public loadChainInfo(info: ChainInfoModel) {
-        if (info && info.PitchMm) {
-            this.ChainInfo = info;
-            this.ChainInfoModalVisible = true;
-        } else {
-            this.ChainInfoModalVisible = false;
-        }
+    public loadChainInfo(info: ChainInfoModel | undefined) {
+        this.ChainInfo = info;
+        this.ChainInfoModalVisible = true;
     }
 }

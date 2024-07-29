@@ -493,8 +493,12 @@
             font-style: italic;
         }
 
-/* Modals */
+.chain-info-missing {
+    padding: 3rem;
+    font-weight: bold;
+}
 
+/* Modals */
 body.modal-showing {
     overflow: hidden;
 }

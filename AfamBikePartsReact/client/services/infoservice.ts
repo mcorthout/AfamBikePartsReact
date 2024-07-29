@@ -10,7 +10,12 @@ export class InfoService {
         fetch(URL)
             .then(async (response) => {
                 if (response.ok) {
-                    done(await response.json());
+                    const data = await response.json(); 
+                    if (data) {
+                        done(data)
+                    } else {
+                        done(errorValue);
+                    }
                 }
                 else {
                     done(errorValue);
