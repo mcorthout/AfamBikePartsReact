@@ -258,6 +258,10 @@
     grid-template-columns: repeat(6, auto);
 }
 
+.sprocket-grid {
+    grid-template-columns: repeat(8, auto);
+}
+
 .item-grid div {
     border: 1px solid #5a5a5a;
     margin-top: -1px;
@@ -289,6 +293,10 @@
     }
 
     .filter-grid {
+        grid-template-columns: repeat(2, auto);
+    }
+
+    .sprocket-grid {
         grid-template-columns: repeat(2, auto);
     }
 
