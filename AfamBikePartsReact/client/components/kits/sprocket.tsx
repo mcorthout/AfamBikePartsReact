@@ -53,7 +53,7 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
         return (
             <div className="kitpart-component-cell">
                 <div className="kitpart-block">
-                    <div className="kitpart-inline">
+                    <div className="kitpart-inline-block">
                         <span className="kitpart-component-cell-label kitpart-inline">{poly.t("Teeth")}:</span>
                         <select className="kitpart-component-cell-value kitpart-inline"
                             name="sprocketSelector"
