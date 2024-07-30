@@ -28,10 +28,11 @@ export class Chain extends React.Component<IChainProps, IChainState> {
     }
 
     public render() {
-        const poly = this.props.store.polyglot;
+        const { kit, store } = this.props;
+        const poly = store.polyglot;
 
-        const selectedChain = this.props.kit.CurrentState.SelectedChain;
-        const chains = this.props.kit.CurrentState.CurrentChains;
+        const selectedChain = kit.CurrentState.SelectedChain;
+        const chains = kit.CurrentState.CurrentChains;
         const chainTypes = this.getTypes(chains);
         const chainColors = this.getColors(chains, selectedChain.ChainType);
 
@@ -109,7 +110,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
                     <div className="kitpart-block">
                         <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Part")}:</div>
                         <div className="kitpart-component-cell-value kitpart-partname kitpart-inline">{selectedChain.FullName}</div>
-                        <a href="#" onClick={(e) => { this.props.store.ShowChainInfo(selectedChain); e.preventDefault(); }}>&#9432;</a>
+                        <a href="#" onClick={(e) => { store.ShowChainInfo(selectedChain); e.preventDefault(); }}>&#9432;</a>
                     </div>
                     {this.thumbnail(selectedChain, imageURL)}
                 </div>
@@ -149,10 +150,8 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         const types: string[] = [];
 
         for (const chain of chains) {
-            if (!types.find((p) => p === chain.ChainType)) {
-                if (chain.ChainType !== "") {
-                    types.push(chain.ChainType);
-                }
+            if (!types.includes(chain.ChainType) && chain.ChainType !== "") {
+                types.push(chain.ChainType);
             }
         }
 
@@ -167,12 +166,8 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         const colors: string[] = [];
 
         for (const chain of chains) {
-            if (chain.ChainType === atype) {
-                if (!colors.find((p) => p === chain.ChainColor)) {
-                    if (chain.ChainColor !== "") {
-                        colors.push(chain.ChainColor);
-                    }
-                }
+            if (chain.ChainType === atype && !colors.includes(chain.ChainColor) && chain.ChainColor !== "") {
+                colors.push(chain.ChainColor);
             }
         }
 
@@ -190,18 +185,9 @@ export class Chain extends React.Component<IChainProps, IChainState> {
         let newChain: KitChainModel | undefined;
 
         /* Try to find a chain with the selected type and the color that is part of the props (i.e. the default color) */
-        const typecolorchains: KitChainModel[] = [];
-
-        for (const chain of chains) {
-            // If the chain has the required type and color
-            if (chain.ChainType === selectedType && chain.ChainColor === selectedColor) {
-                // And it is not yet present in the output array
-                if (!typecolorchains.find((p) => (p.ChainType === selectedType && p.ChainColor === selectedColor))) {
-                    // Then add it to the output array
-                    typecolorchains.push(chain);
-                }
-            }
-        }
+        const typecolorchains: KitChainModel[] = chains.filter((chain) =>
+            chain.ChainType === selectedType && chain.ChainColor === selectedColor
+        );
 
         if (typecolorchains.length > 0) {
             newChain = typecolorchains[0];
@@ -209,15 +195,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
 
         /* If no chain could be found, select the first chain of the selected type */
         if (!newChain) {
-            const typechains: KitChainModel[] = [];
-
-            for (const chain of chains) {
-                if (chain.ChainType === selectedType) {
-                    if (!typechains.find((p) => p.ChainType === selectedType)) {
-                        typechains.push(chain);
-                    }
-                }
-            }
+            const typechains: KitChainModel[] = chains.filter((chain) => chain.ChainType === selectedType);
 
             if (typechains.length > 0) {
                 newChain = typechains[0];
@@ -229,7 +207,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
             newChain = chains[0];
         }
 
-        /* Set thumbnail back to visible */
+        /* Set thumbnail potentially back to visible */
         this.setState({
             thumbnailVisible: true,
         });
@@ -248,16 +226,10 @@ export class Chain extends React.Component<IChainProps, IChainState> {
 
         let newChain: KitChainModel | undefined;
 
-        /* Try to find a chain with the selected type and the color that is part of the props (i.e. the default color) */
-        const typecolorchains: KitChainModel[] = [];
-
-        for (const chain of chains) {
-            if (chain.ChainType === selectedType && chain.ChainColor === selectedColor) {
-                if (!typecolorchains.find((p) => p.ChainType === selectedType && p.ChainColor === selectedColor)) {
-                    typecolorchains.push(chain);
-                }
-            }
-        }
+        /* Try to find a chain with the selected type and color that is part of the props (i.e. the default color) */
+        const typecolorchains: KitChainModel[] = chains.filter((chain) =>
+            chain.ChainType === selectedType && chain.ChainColor === selectedColor
+        );
 
         if (typecolorchains.length > 0) {
             newChain = typecolorchains[0];
@@ -268,7 +240,7 @@ export class Chain extends React.Component<IChainProps, IChainState> {
             newChain = chains[0];
         }
 
-        /* Set thumbnail back to visible */
+        /* Set thumbnail potentially back to visible */
         this.setState({
             thumbnailVisible: true,
         });
