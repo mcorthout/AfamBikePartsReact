@@ -26,18 +26,14 @@ export class Kit extends React.Component<IKitProps, {}> {
 
         return (
             <div className="kit-table-row">
-                <div className="kit-table-cell">
-                    <div className="kit-title">{kit.KitType}</div>
-                </div>
-                <div className="kit-table-cell">
-                    <div className="kit-table-kitpart">{this.props.store.polyglot.t("PartNumber")}: <span className="kit-table-kitname">{kit.KitName}</span></div>
-                    <div className="kit-table-description">{kit.Description}</div>
-                    <KitBom
-                        key={"kitbom_" + kit.PartId}
-                        kit={kit}
-                        store={this.props.store}
-                    />
-                </div>
+                <div className="kit-title">{kit.KitType}</div>
+                <div className="kit-table-kitpart">{this.props.store.polyglot.t("PartNumber")}: <span className="kit-table-kitname">{kit.KitName}</span></div>
+                <div className="kit-table-description">{kit.Description}</div>
+                <KitBom
+                    key={"kitbom_" + kit.PartId}
+                    kit={kit}
+                    store={this.props.store}
+                />
             </div>
         );
     }
