@@ -30,23 +30,17 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
     }
 
     public render() {
-        let sprockets = null;
-        let selectedSprocket = null;
-        const poly = this.props.store.appStore.polyglot;
+        const { kit, store, side } = this.props;
+        const poly = store.appStore.polyglot;
 
-        if (this.props.side === "front") {
-            sprockets = this.props.kit.FrontSprockets;
-            selectedSprocket = this.props.kit.CurrentState.SelectedFrontSprocket;
-        } else {
-            sprockets = this.props.kit.RearSprockets;
-            selectedSprocket = this.props.kit.CurrentState.SelectedRearSprocket;
-        }
+        const sprockets = side === "front" ? kit.FrontSprockets : kit.RearSprockets;
+        const selectedSprocket = side === "front" ? kit.CurrentState.SelectedFrontSprocket : kit.CurrentState.SelectedRearSprocket;
 
-        const sprocketOptions = sprockets.map((s) =>
-            <option
-                key={s.PartId}
-                value={s.SprocketName}>{s.Teeth}
-            </option>);
+        const sprocketOptions = sprockets.map((s) => (
+            <option key={s.PartId} value={s.SprocketName}>
+                {s.Teeth}
+            </option>
+        ));
 
         const imageURL = ProductImageBase + "sprockets/3d/vignettes/" + selectedSprocket.SprocketName + ".jpg";
 
@@ -55,15 +49,20 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
                 <div className="kitpart-block">
                     <div className="kitpart-inline-block">
                         <span className="kitpart-component-cell-label kitpart-inline">{poly.t("Teeth")}:</span>
-                        <select className="kitpart-component-cell-value kitpart-inline"
+                        <select
+                            className="kitpart-component-cell-value kitpart-inline"
                             name="sprocketSelector"
                             value={selectedSprocket.SprocketName}
-                            onChange={this.handleChange}>{sprocketOptions}
+                            onChange={this.handleChange}
+                        >
+                            {sprocketOptions}
                         </select>
                     </div>
                     <div>
                         <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Part")}:</div>
-                        <div className="kitpart-partname kitpart-component-cell-value kitpart-inline">{selectedSprocket.SprocketName}</div>
+                        <div className="kitpart-partname kitpart-component-cell-value kitpart-inline">
+                            {selectedSprocket.SprocketName}
+                        </div>
                     </div>
                     {this.thumbnail(selectedSprocket, imageURL)}
                 </div>
@@ -71,41 +70,40 @@ export class Sprocket extends React.Component<ISprocketProps, ISprocketState> {
         );
     }
 
-    private ImageError(item: HTMLImageElement) {
+    private ImageError = () => {
         this.setState({
             thumbnailVisible: false,
         });
-    }
+    };
 
-    private thumbnail(sprocket: SprocketModel, imageURL: string) {
+    private thumbnail = (sprocket: SprocketModel, imageURL: string) => {
         if (this.state.thumbnailVisible) {
             return (
                 <div className="kitpart-thumbnail kitpart-block">
                     <a href="#">
                         <img
                             src={imageURL}
-                            onError={(e) => this.ImageError(e.currentTarget)}
-                            onClick={(e) => { this.props.store.ShowSprocketImage(sprocket, imageURL); e.preventDefault(); }}
+                            onError={this.ImageError}
+                            onClick={(e) => {
+                                this.props.store.ShowSprocketImage(sprocket, imageURL);
+                                e.preventDefault();
+                            }}
                         />
                     </a>
                 </div>
             );
-        }
-        else {
+        } else {
             return null;
         }
-    }
+    };
 
-    /**
-     * Inform the parent component that the user selected a different number of teeth (i.e. a different sprocket)
-     */
-    private handleChange = (event: React.FormEvent<HTMLSelectElement>): void => {
+    private handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
         this.setState({
             thumbnailVisible: true,
         });
         const currentSprocketName = event.currentTarget.value;
-        const sprockets = (this.props.side === "front") ? this.props.kit.FrontSprockets : this.props.kit.RearSprockets;
-        const selectedSprocket = sprockets.find((s: SprocketModel) => s.SprocketName === currentSprocketName) || sprockets[0];
+        const sprockets = this.props.side === "front" ? this.props.kit.FrontSprockets : this.props.kit.RearSprockets;
+        const selectedSprocket = sprockets.find((s) => s.SprocketName === currentSprocketName) || sprockets[0];
         this.props.store.handleSprocketChange(this.props.kit, this.props.side, selectedSprocket);
-    }
+    };
 }
