@@ -28,20 +28,13 @@
     vertical-align: middle;
 }
 
-.bike-select-cell-none {
-    display: none;
-}
-
     .bike-select-cell > select,
-    .bike-select-cell-none > select,
-    .bike-select-cell > span,
-    .bike-select-cell-none > span {
+    .bike-select-cell > span {
         margin-bottom: 0;
         margin-right: 0.5rem;
     }
 
-    .bike-select-cell > span,
-    .bike-select-cell-none > span {
+    .bike-select-cell > span{
         height: 2.25rem;
     }
 
@@ -146,10 +139,6 @@
     padding: 0 0 0.5rem 0;
 }
 
-.kit-table-kitname {
-    color: #00148e;
-}
-
 .kit-table-description {
     padding: 0 0 1.0rem 0;
 }
@@ -228,12 +217,6 @@
 
 .kitpart-thumbnail img {
     height: 4rem;
-}
-
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
 }
 
 /* Collapsible item list*/
@@ -324,72 +307,9 @@
 
 
 /* Parts */
-.partlist-container {
-}
-
-
-.part_tab_content {
-    margin: auto;
-    padding: 1rem;
-    border: 1px solid #5a5a5a;
-    display: inline-table;
-}
-
-.part-table {
-    margin: auto;
-    padding: 1rem;
-    border: 1px solid #5a5a5a;
-    display: inline-table;
-    border-color: #5a5a5a;
-    border-width: 1px;
-    border-collapse: collapse;
-    border-spacing: 0;
-}
-
-.part-table th {
-    background-color: #00148e;
-    color: white;
-    text-align: center;
-    padding: 0.5rem;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #5a5a5a;
-}
-
-.part-table td {
-    padding: 0.5rem;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #5a5a5a;
-    text-align: center;
-}
-
-    .part-table.collapsed td {
-        text-align: left;
-    }
-
-    .part-table.collapsed td:first-child {
-        background-color: #00148e;
-        color: white;
-        text-align: right;
-        padding: 0.5rem;
-    }
-
-.part-table td.centered {
-    text-align: center;
-}
-
-.collapsed {
-    margin-top: 1rem;
-    margin-right: 1rem;
-}
 
 .cell-center {
     text-align: center;
-}
-
-.cell-right {
-    text-align: right;
 }
 
 .cell-left {
@@ -411,12 +331,6 @@
     justify-content: flex-start;
     align-items: start;
     margin: 2rem;
-}
-
-.battery-info-header {
-    display: flex;
-    color: black;
-    font-weight: bold;
 }
 
 .battery-info-table {
@@ -496,9 +410,6 @@
 }
 
 /* Modals */
-body.modal-showing {
-    overflow: hidden;
-}
 
 .modal_background {
     position: fixed;
@@ -603,23 +514,6 @@ button.close {
 
 .close_button:hover {
     color: #fc0;
-}
-
-/**/
-
-.sr-only {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
-}
-
-.underline {
-    text-decoration: underline;
 }
 
 /* Part list */
