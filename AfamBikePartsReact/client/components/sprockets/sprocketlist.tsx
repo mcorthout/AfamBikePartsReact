@@ -50,12 +50,12 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
         const parts = sprockets.map((s, i) => 
             [               
                 <div key={"Item" + i.toString()} className="item-grid-data" data-label="Item">{s.CatalogNumber}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data" data-label="EAN">{s.Ean}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data" data-label="Pitch">{s.Pitch}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data" data-label="Teeth">{s.Teeth}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data" data-label="Material">{s.Material}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data" data-label="Description">{s.Description}</div>,
-                <div key={"Item" + i.toString()} className="item-grid-data centered" data-label="Applications">
+                <div key={"EAN" + i.toString()} className="item-grid-data" data-label="EAN">{s.Ean}</div>,
+                <div key={"Pitch" + i.toString()} className="item-grid-data" data-label="Pitch">{s.Pitch}</div>,
+                <div key={"Teeth" + i.toString()} className="item-grid-data" data-label="Teeth">{s.Teeth}</div>,
+                <div key={"Material" + i.toString()} className="item-grid-data" data-label="Material">{s.Material}</div>,
+                <div key={"Description" + i.toString()} className="item-grid-data" data-label="Description">{s.Description}</div>,
+                <div key={"Applications" + i.toString()} className="item-grid-data centered" data-label="Applications">
                         <a href="#">
                             <img
                                 src={CommonImageBase + "bike.png"}
@@ -63,7 +63,7 @@ export class SprocketList extends React.Component<ISprocketListProps, ISprocketL
                             />
                         </a>
                     </div>,
-                <div key={"Item" + i.toString()} className="item-grid-data centered item-grid-row-spacer" data-label="Image">
+                <div key={"Image" + i.toString()} className="item-grid-data centered item-grid-row-spacer" data-label="Image">
                         <a href="#">
                             <img
                                 className="part-image"
