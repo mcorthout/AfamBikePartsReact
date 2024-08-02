@@ -93,24 +93,30 @@ export class Chain extends React.Component<IChainProps, IChainState> {
                 <div className="kitpart-block">
                     <div className="kitpart-block">
                         <div className="kitpart-inline-block">
-                            <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Type")}:</div>
+                            <div className="kitpart-component-cell-label kitpart-inline-block">{poly.t("Type")}:</div>
                             {chainTypeSelect}
                             {chainTypeSingle}
                         </div>
                         <div className="kitpart-inline-block">
-                            <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Color")}:</div>
+                            <div className="kitpart-component-cell-label kitpart-inline-block">{poly.t("Color")}:</div>
                             {chainColorSelect}
                             {chainColorSingle}
                         </div>
                         <div className="kitpart-inline-block">
-                            <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Length")}:</div>
-                            <div className="kitpart-component-cell-value kitpart-inline">{selectedChain.Length}</div>
+                            <div className="kitpart-component-cell-label kitpart-inline-block">{poly.t("Length")}:</div>
+                            <div className="kitpart-component-cell-value kitpart-inline-block">{selectedChain.Length}</div>
                         </div>
                     </div>
                     <div className="kitpart-block">
-                        <div className="kitpart-component-cell-label kitpart-inline">{poly.t("Part")}:</div>
-                        <div className="kitpart-component-cell-value kitpart-partname kitpart-inline">{selectedChain.FullName}</div>
-                        <a href="#" onClick={(e) => { store.ShowChainInfo(selectedChain); e.preventDefault(); }}>&#9432;</a>
+                        <div className="kitpart-inline-block">
+                            <div className="kitpart-component-cell-label kitpart-inline-block">{poly.t("Part")}:</div>
+                        </div>
+                        <div className="kitpart-inline-block">
+                            <div className="kitpart-component-cell-value kitpart-partname kitpart-inline-block">{selectedChain.FullName}</div>
+                        </div>
+                        <div className="kitpart-inline-block">
+                            <a className="kitpart-inline-block" href="#" onClick={(e) => { store.ShowChainInfo(selectedChain); e.preventDefault(); }}>&#9432;</a>
+                        </div>
                     </div>
                     {this.thumbnail(selectedChain, imageURL)}
                 </div>
