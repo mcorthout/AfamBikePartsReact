@@ -70,7 +70,7 @@ export class ChainList extends React.Component<IChainListProps, IChainListState>
                     <div key={"Image" + i.toString()} className="item-grid-data centered" data-label="Image">
                         <a href="#">
                             <img
-                                className="part-image"
+                                className="part-image chain-thumbnail"
                                 src={chainImage}
                                 onError={(e) => this.ImageError(e.currentTarget)}
                                 onClick={(e) => { this.props.store.ShowChainImage(s, chainImage); e.preventDefault(); }}
